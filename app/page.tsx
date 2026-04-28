@@ -7,7 +7,10 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Athletes To Industry — Career Programme for Elite Athletes',
+  title: 'Athlete Career Transition Programme | Athletes To Industry',
+  description:
+    'Athletes To Industry is a structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
+  alternates: { canonical: '/' },
 };
 
 const differentiators = [
@@ -87,15 +90,70 @@ const partners = [
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://athletestoindustry.com/#webpage',
+      url: 'https://athletestoindustry.com/',
+      name: 'Athletes To Industry: Athlete Career Transition Programme',
+      description:
+        'A structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
+      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      about: { '@id': 'https://athletestoindustry.com/#organization' },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
+        ],
+      },
+    },
+    {
+      '@type': 'Service',
+      '@id': 'https://athletestoindustry.com/#service',
+      name: 'Athletes To Industry Career Transition Programme',
+      description:
+        'A structured 12-month career transition service for elite athletes leaving sport. Includes career planning, certificated training, employer introductions, and a written development plan.',
+      provider: {
+        '@type': 'Person',
+        '@id': 'https://andrews-recruitment.com/#tom-andrews',
+        name: 'Tom Andrews',
+        jobTitle: 'Owner',
+        url: 'https://andrews-recruitment.com',
+        worksFor: {
+          '@type': 'Organization',
+          '@id': 'https://andrews-recruitment.com/#organization',
+          name: 'Andrews Recruitment Group',
+          url: 'https://andrews-recruitment.com',
+        },
+      },
+      serviceType: 'Athlete career transition and recruitment',
+      areaServed: 'GB',
+      url: 'https://athletestoindustry.com',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'GBP',
+        description: 'Free to athletes. Employer and partner fees fund the programme.',
+      },
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <PageReveal>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Hero ── */}
       <section className="min-h-screen flex items-center pt-40 pb-20 px-6 md:px-12 relative">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
-              <SectionLabel>A programme by Andrews Recruitment Group</SectionLabel>
+              <SectionLabel>Athlete Career Transition Programme, Andrews Recruitment Group</SectionLabel>
             </div>
             <div data-reveal>
               <Display>
@@ -107,11 +165,14 @@ export default function HomePage() {
             <span className="gold-line mt-12 mb-12 block" data-reveal="fade" />
             <div data-reveal>
               <Prose className="text-[20px] max-w-[680px]">
-                Athletes To Industry is a structured career programme for athletes moving out of the elite pathway.
+                Athletes To Industry is a{' '}
+                <Link href="/programme" className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors">structured career programme</Link>
+                {' '}for athletes moving out of the elite pathway.
                 Built for the released academy player at 17 and the retiring pro at 32. Across rugby, football,
                 cricket, athletics, and every sport in between. Real career planning, real training, real
-                introductions, all run on a system designed to support people through the move from sport into a
-                working life that lasts.
+                introductions, all run on{' '}
+                <Link href="/system" className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors">a platform built for this</Link>
+                {' '}designed to support people through the move from sport into a working life that lasts.
               </Prose>
             </div>
             <div className="flex flex-wrap gap-4 mt-14" data-reveal="fade">
@@ -183,7 +244,7 @@ export default function HomePage() {
             <div className="cohort-card-primary relative p-10 md:p-12">
               <span
                 className="absolute top-5 right-6 text-[10px] tracking-[0.25em] text-gold font-semibold"
-                aria-label="Primary cohort"
+                aria-hidden="true"
               >
                 PRIMARY
               </span>
@@ -281,7 +342,7 @@ export default function HomePage() {
                 </p>
                 {milestone.items.map((item) => (
                   <Prose key={item} className="text-[14px] mt-2.5">
-                    — {item}
+                    · {item}
                   </Prose>
                 ))}
               </div>

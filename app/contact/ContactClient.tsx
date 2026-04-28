@@ -74,7 +74,7 @@ export function ContactClient() {
       <section className="min-h-screen pt-44 pb-32 px-6 md:px-12">
         <div className="max-w-[1080px] mx-auto">
           <div className="mb-20 max-w-[720px]" data-reveal>
-            <SectionLabel>Get in touch</SectionLabel>
+            <SectionLabel>Contact Athletes To Industry</SectionLabel>
             <Display>
               Start the<br /><GoldSpan>conversation.</GoldSpan>
             </Display>
@@ -92,7 +92,7 @@ export function ContactClient() {
               role="status"
               aria-live="polite"
             >
-              <p className="text-[11px] tracking-widest3 text-gold mb-6 font-semibold uppercase">
+              <p className="text-[11px] tracking-widest3 text-cream-muted mb-6 font-semibold uppercase">
                 Message received
               </p>
               <Display size="md" as="h2">Thank you.</Display>
@@ -160,6 +160,7 @@ export function ContactClient() {
                       id={`${formId}-name`}
                       type="text"
                       autoComplete="name"
+                      required
                       value={form.name}
                       onChange={(e) => {
                         setForm({ ...form, name: e.target.value });
@@ -192,6 +193,7 @@ export function ContactClient() {
                       id={`${formId}-email`}
                       type="email"
                       autoComplete="email"
+                      required
                       value={form.email}
                       onChange={(e) => {
                         setForm({ ...form, email: e.target.value });
@@ -223,6 +225,7 @@ export function ContactClient() {
                     <textarea
                       id={`${formId}-message`}
                       rows={4}
+                      required
                       value={form.message}
                       onChange={(e) => {
                         setForm({ ...form, message: e.target.value });

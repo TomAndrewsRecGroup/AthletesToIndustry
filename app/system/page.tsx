@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
 import { Prose } from '@/components/ui/Prose';
@@ -6,9 +7,10 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'The People System',
+  title: 'Athlete Talent and Development Platform: The People System',
   description:
-    'A full talent and learning platform built and owned by Andrews Recruitment Group. Athletes, employers, trainers and courses — one system.',
+    'The People System manages athlete profiles, employer roles, training courses, and 12-month development plans in one place. Built and owned by Andrews Recruitment Group.',
+  alternates: { canonical: '/system' },
 };
 
 const features = [
@@ -38,15 +40,73 @@ const features = [
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://athletestoindustry.com/system#webpage',
+      url: 'https://athletestoindustry.com/system',
+      name: 'Athlete Talent and Development Platform: The People System',
+      description:
+        'The People System manages athlete profiles, employer roles, training courses, and 12-month development plans in one place. Built and owned by Andrews Recruitment Group.',
+      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
+          { '@type': 'ListItem', position: 2, name: 'The People System', item: 'https://athletestoindustry.com/system' },
+        ],
+      },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': 'https://athletestoindustry.com/system#software',
+      name: 'The People System',
+      description:
+        'A full athlete talent and development platform built and owned by Andrews Recruitment Group. Manages athlete profiles, employer roles, training courses, and 12-month development plans.',
+      applicationCategory: 'Talent management and career development platform',
+      operatingSystem: 'Web',
+      offers: {
+        '@type': 'Offer',
+        description: 'Available to employer partners of the Athletes To Industry programme.',
+      },
+      author: {
+        '@type': 'Person',
+        '@id': 'https://andrews-recruitment.com/#tom-andrews',
+        name: 'Tom Andrews',
+        jobTitle: 'Owner',
+        url: 'https://andrews-recruitment.com',
+        worksFor: {
+          '@type': 'Organization',
+          '@id': 'https://andrews-recruitment.com/#organization',
+          name: 'Andrews Recruitment Group',
+          url: 'https://andrews-recruitment.com',
+        },
+      },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://andrews-recruitment.com/#organization',
+        name: 'Andrews Recruitment Group',
+        url: 'https://andrews-recruitment.com',
+      },
+    },
+  ],
+};
+
 export default function SystemPage() {
   return (
     <PageReveal>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Hero ── */}
       <section className="min-h-[70vh] flex items-center pt-44 pb-20 px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
-              <SectionLabel>The People System</SectionLabel>
+              <SectionLabel>Athlete Talent &amp; Development Platform</SectionLabel>
             </div>
             <div data-reveal>
               <Display>
@@ -56,9 +116,11 @@ export default function SystemPage() {
             <span className="gold-line mt-10 mb-10 block" data-reveal="fade" />
             <div data-reveal>
               <Prose className="text-[19px] max-w-[680px]">
-                The People System is a full talent and learning platform built and owned by Andrews Recruitment
-                Group. It supports clients across talent, HR, process, learning, and policies, and includes a portal
-                for clients to manage their own people work. Athletes To Industry runs on it.
+                The People System is a full athlete talent and development platform built and owned by Andrews Recruitment
+                Group. It manages athlete profiles, employer roles, training courses, and 12-month development plans
+                in one place.{' '}
+                <Link href="/programme" className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors">Athletes To Industry</Link>
+                {' '}runs on it end to end.
               </Prose>
             </div>
           </div>

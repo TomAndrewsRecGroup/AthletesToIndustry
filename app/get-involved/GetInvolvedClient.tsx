@@ -74,7 +74,7 @@ export function GetInvolvedClient() {
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
-              <SectionLabel>Get involved</SectionLabel>
+              <SectionLabel>Join the Athletes To Industry Programme</SectionLabel>
             </div>
             <div data-reveal>
               <Display>

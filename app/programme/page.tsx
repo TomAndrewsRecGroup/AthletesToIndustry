@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
 import { Prose } from '@/components/ui/Prose';
@@ -6,9 +7,10 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'The Programme',
+  title: 'Athlete Career Transition Programme: How It Works',
   description:
-    'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12.',
+    'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
+  alternates: { canonical: '/programme' },
 };
 
 const stage1Timeline = [
@@ -60,15 +62,65 @@ const trainingAreas = [
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://athletestoindustry.com/programme#webpage',
+      url: 'https://athletestoindustry.com/programme',
+      name: 'Athlete Career Transition Programme: How It Works',
+      description:
+        'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
+      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Programme', item: 'https://athletestoindustry.com/programme' },
+        ],
+      },
+    },
+    {
+      '@type': 'HowTo',
+      '@id': 'https://athletestoindustry.com/programme#howto',
+      name: 'Athlete Career Transition Pathway',
+      description: 'How the 12-month Athletes To Industry career transition programme works, from Week 1 onboarding through to Month 12 review.',
+      totalTime: 'P12M',
+      supply: { '@type': 'HowToSupply', name: 'Athlete leaving the elite pathway' },
+      tool: { '@type': 'HowToTool', name: 'The People System talent platform' },
+      step: [
+        { '@type': 'HowToStep', name: 'Week 1: Onboarding', text: 'Screening call, onboarded onto The People System, goals and options session.' },
+        { '@type': 'HowToStep', name: 'Month 1: Workshops', text: 'CV writing workshop, interview skills workshop, job search and tech workshops.' },
+        { '@type': 'HowToStep', name: 'Month 2: Certificated training', text: 'Certificated training delivered by trusted, verified partners at zero cost to the athlete.' },
+        { '@type': 'HowToStep', name: 'Month 3: Introductions', text: 'Client introductions, interview scheduling, trial day coordination.' },
+        { '@type': 'HowToStep', name: 'Month 6: Embed', text: 'Placement embedded, development plan live, six-month review.' },
+        { '@type': 'HowToStep', name: 'Month 12: Review', text: 'Twelve-month review, progression check-in, alumni network.' },
+      ],
+      creator: {
+        '@type': 'Person',
+        '@id': 'https://andrews-recruitment.com/#tom-andrews',
+        name: 'Tom Andrews',
+        jobTitle: 'Owner',
+        url: 'https://andrews-recruitment.com',
+      },
+    },
+  ],
+};
+
 export default function ProgrammePage() {
   return (
     <PageReveal>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* ── Hero ── */}
       <section className="min-h-[70vh] flex items-center pt-44 pb-20 px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
-              <SectionLabel>The Programme</SectionLabel>
+              <SectionLabel>Athlete Career Transition Programme</SectionLabel>
             </div>
             <div data-reveal>
               <Display>
@@ -79,8 +131,9 @@ export default function ProgrammePage() {
             <div data-reveal>
               <Prose className="text-[19px] max-w-[680px]">
                 Athletes To Industry is built around a clear, timed pathway. The first ninety days are owned
-                end-to-end by Andrews Recruitment Group. From there, the development plan is shaped with the employer
-                the athlete joins. The same pathway runs for both cohorts: athletes leaving the elite pathway placed
+                end-to-end by Andrews Recruitment Group. From there, the development plan is shaped with the{' '}
+                <Link href="/employers" className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors">employer the athlete joins</Link>.
+                {' '}The same pathway runs for both cohorts: athletes leaving the elite pathway placed
                 into permanent industry roles, and apprenticeship-ready young players placed into trainee positions
                 in parallel with their playing.
               </Prose>
@@ -132,7 +185,7 @@ export default function ProgrammePage() {
                     <p className="text-[11px] text-gold tracking-widest2 mb-3 font-semibold">{t.label}</p>
                     {t.items.map((item) => (
                       <p key={item} className="text-cream-muted text-sm py-1.5">
-                        — {item}
+                        · {item}
                       </p>
                     ))}
                   </div>
@@ -150,7 +203,7 @@ export default function ProgrammePage() {
               borderBottom: '1px solid var(--gold-border)',
             }}
           >
-            <span className="text-[11px] tracking-widest3 text-gold font-semibold shrink-0 uppercase">
+            <span className="text-[11px] tracking-widest3 text-cream-muted font-semibold shrink-0 uppercase">
               ↓ The Transition
             </span>
             <Prose className="text-[15px]">
@@ -193,7 +246,7 @@ export default function ProgrammePage() {
                     <p className="text-[11px] text-gold tracking-widest2 mb-3 font-semibold">{t.label}</p>
                     {t.items.map((item) => (
                       <p key={item} className="text-cream-muted text-sm py-1.5">
-                        — {item}
+                        · {item}
                       </p>
                     ))}
                   </div>
@@ -229,7 +282,7 @@ export default function ProgrammePage() {
             data-reveal
           >
             <div>
-              <p className="font-display text-[11px] text-gold tracking-widest3 mb-3 font-semibold">FEATURED</p>
+              <p className="font-display text-[11px] text-cream-muted tracking-widest3 mb-3 font-semibold">FEATURED</p>
               <p className="font-display text-[64px] font-semibold text-gold leading-none">£0</p>
               <p className="text-[12px] tracking-widest2 text-cream-muted uppercase mt-2 font-medium">
                 Cost to the athlete
@@ -272,7 +325,7 @@ export default function ProgrammePage() {
                       className="text-cream-muted text-sm py-2"
                       style={{ borderBottom: '1px solid var(--border)' }}
                     >
-                      — {item}
+                      · {item}
                     </li>
                   ))}
                 </ul>

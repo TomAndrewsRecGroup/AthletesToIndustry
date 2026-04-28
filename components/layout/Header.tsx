@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Logo } from '@/components/ui/Logo';
@@ -10,6 +10,9 @@ export function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const mobileNavRef = useRef<HTMLElement>(null);
+  const wasOpenRef = useRef(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,6 +27,47 @@ export function Header() {
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
+
+  // Move focus into menu on open; return to hamburger on close
+  useEffect(() => {
+    if (menuOpen) {
+      wasOpenRef.current = true;
+      const firstLink = mobileNavRef.current?.querySelector<HTMLElement>('a');
+      firstLink?.focus();
+    } else if (wasOpenRef.current) {
+      wasOpenRef.current = false;
+      hamburgerRef.current?.focus();
+    }
+  }, [menuOpen]);
+
+  // Escape closes menu; Tab cycles focus within the nav (focus trap)
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false);
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const nav = mobileNavRef.current;
+      if (!nav) return;
+      const focusable = Array.from(
+        nav.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+      );
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [menuOpen]);
 
   return (
@@ -43,7 +87,7 @@ export function Header() {
           <Link
             href="/"
             className="flex items-center gap-3.5 group focus-visible:outline-none"
-            aria-label="Athletes To Industry — home"
+            aria-label="Athletes To Industry home"
           >
             <Logo size="sm" />
             <div className="leading-none">
@@ -89,10 +133,12 @@ export function Header() {
 
           {/* Mobile hamburger */}
           <button
+            ref={hamburgerRef}
             className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] focus-visible:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
           >
             <span
               className="block w-6 h-px bg-cream transition-all duration-300 origin-center"
@@ -129,6 +175,8 @@ export function Header() {
           onClick={() => setMenuOpen(false)}
         />
         <nav
+          ref={mobileNavRef}
+          id="mobile-nav"
           className="absolute top-[68px] left-0 right-0 transition-transform duration-300"
           style={{
             background: 'rgba(6,10,24,0.98)',
