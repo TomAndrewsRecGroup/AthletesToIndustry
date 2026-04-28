@@ -1,15 +1,19 @@
 'use client';
 
-import { type ButtonHTMLAttributes } from 'react';
+import { type ButtonHTMLAttributes, type AnchorHTMLAttributes } from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/cn';
 
 type ButtonVariant = 'primary' | 'ghost';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonProps = {
   variant?: ButtonVariant;
-  href?: string;
-}
+  className?: string;
+  children?: React.ReactNode;
+} & (
+  | ({ href: string } & Pick<AnchorHTMLAttributes<HTMLAnchorElement>, 'target' | 'rel'>)
+  | ({ href?: undefined } & ButtonHTMLAttributes<HTMLButtonElement>)
+);
 
 const base =
   'inline-block px-8 py-4 text-xs tracking-widest2 font-semibold uppercase cursor-pointer transition-all duration-300 font-body leading-none';
@@ -25,15 +29,16 @@ export function Button({ variant = 'primary', href, children, className, ...prop
   const classes = cn(base, variants[variant], className);
 
   if (href) {
+    const { target, rel } = props as { target?: string; rel?: string };
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} target={target} rel={rel}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={classes} {...props}>
+    <button className={classes} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>
       {children}
     </button>
   );
