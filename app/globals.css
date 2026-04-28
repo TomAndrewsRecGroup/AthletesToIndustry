@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS Custom Properties ── */
+:root {
+  --navy: #0a1126;
+  --navy-deep: #060a18;
+  --cream: #f3ecd8;
+  --cream-muted: #c9c4b3;
+  --gold: #c9a24a;
+  --gold-bright: #e0b85a;
+  --border: rgba(243, 236, 216, 0.12);
+  --gold-border: rgba(201, 162, 74, 0.3);
+  --gold-surface: rgba(201, 162, 74, 0.06);
+  --cream-surface: rgba(243, 236, 216, 0.02);
+}
+
+/* ── Base Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: var(--navy-deep);
+  color: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--gold);
+  color: var(--navy-deep);
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 74, 0.4);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* ── Scroll Reveal ── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal="fade"] {
+  transform: none;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-stagger].revealed > *:nth-child(1) { transition-delay: 0ms; }
+[data-stagger].revealed > *:nth-child(2) { transition-delay: 80ms; }
+[data-stagger].revealed > *:nth-child(3) { transition-delay: 160ms; }
+[data-stagger].revealed > *:nth-child(4) { transition-delay: 240ms; }
+[data-stagger].revealed > *:nth-child(5) { transition-delay: 320ms; }
+[data-stagger].revealed > *:nth-child(6) { transition-delay: 400ms; }
+
+[data-stagger].revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Focus visible ── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Gold line accent ── */
+.gold-line {
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ── Grid gap-2px mosaic ── */
+.mosaic-grid {
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.mosaic-cell {
+  background: var(--navy);
+}
+
+/* ── Partner card hover ── */
+.partner-card {
+  border: 1px solid var(--border);
+  background: var(--cream-surface);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.partner-card:hover {
+  border-color: var(--gold);
+  background: var(--gold-surface);
+}
+
+/* ── Stage card ── */
+.stage-card {
+  background: var(--navy);
+}
+
+/* ── Cohort card ── */
+.cohort-card-primary {
+  background: var(--navy);
+  border: 1px solid var(--gold);
+}
+
+.cohort-card-secondary {
+  background: var(--cream-surface);
+  border: 1px solid var(--border);
+}
+
+/* ── Form inputs ── */
+.form-input {
+  width: 100%;
+  padding: 14px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--cream);
+  font-size: 16px;
+  font-family: var(--font-inter), sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-bottom-color: var(--gold);
+}
+
+.form-input::placeholder {
+  color: transparent;
+}
+
+/* ── Page transition ── */
+.page-enter {
+  animation: pageFadeIn 0.35s ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .page-enter {
+    animation: none;
+  }
+}
