@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
@@ -63,55 +63,29 @@ const pathway = [
   },
 ];
 
-const partners = [
-  {
-    num: '01',
-    title: 'Athletes',
-    text: 'Released academy players, retiring semi-pros, retiring professionals, and those returning from injury or ending a competitive career.',
-    href: '/get-involved',
-  },
-  {
-    num: '02',
-    title: 'Employers',
-    text: 'Businesses across multiple sectors who want to hire with intent and offer a structured development plan, not just a job offer.',
-    href: '/get-involved',
-  },
-  {
-    num: '03',
-    title: 'Clubs and bodies',
-    text: 'Sports clubs, academies, governing bodies and player welfare organisations who refer athletes into the programme and stay close as the continuity point.',
-    href: '/get-involved',
-  },
-  {
-    num: '04',
-    title: 'Trainers',
-    text: 'Specialist training providers offering CV, interview, leadership, technical, vocational and safety qualifications, all delivered through the programme.',
-    href: '/get-involved',
-  },
-];
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://athletestoindustry.com/#webpage',
-      url: 'https://athletestoindustry.com/',
+      '@id': 'https://athletestoindustry.co.uk/#webpage',
+      url: 'https://athletestoindustry.co.uk/',
       name: 'Athletes To Industry: Athlete Career Transition Programme',
       description:
         'A structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
-      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
-      about: { '@id': 'https://athletestoindustry.com/#organization' },
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      about: { '@id': 'https://athletestoindustry.co.uk/#organization' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
         ],
       },
     },
     {
       '@type': 'Service',
-      '@id': 'https://athletestoindustry.com/#service',
+      '@id': 'https://athletestoindustry.co.uk/#service',
       name: 'Athletes To Industry Career Transition Programme',
       description:
         'A structured 12-month career transition service for elite athletes leaving sport. Includes career planning, certificated training, employer introductions, and a written development plan.',
@@ -130,7 +104,7 @@ const jsonLd = {
       },
       serviceType: 'Athlete career transition and recruitment',
       areaServed: 'GB',
-      url: 'https://athletestoindustry.com',
+      url: 'https://athletestoindustry.co.uk',
       offers: {
         '@type': 'Offer',
         price: '0',
@@ -186,7 +160,7 @@ export default function HomePage() {
           className="absolute bottom-10 left-6 md:left-12 text-[10px] tracking-widest3 text-cream-muted uppercase"
           aria-label="Programme operator and pilot partner"
         >
-          Operated by Andrews Recruitment Group · Pilot partner Old Albanian RFC
+          Operated by Andrews Recruitment Group · Powered by The People System
         </p>
       </section>
 
@@ -217,70 +191,6 @@ export default function HomePage() {
               should not be the same thing. We do not place athletes into jobs. We help them build the next career
               properly, with structure, support, and a real human running it.
             </Prose>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Two cohorts ── */}
-      <section
-        className="py-32 px-6 md:px-12"
-        style={{ borderTop: '1px solid var(--border)' }}
-      >
-        <div className="max-w-[1280px] mx-auto">
-          <div className="mb-16 max-w-[720px]" data-reveal>
-            <SectionLabel>Who the programme is built for</SectionLabel>
-            <Display size="lg" as="h2">
-              Two cohorts.<br /><GoldSpan>One</GoldSpan> programme.
-            </Display>
-            <Prose className="mt-8">
-              The programme is built around athletes leaving the elite pathway. A second, smaller cohort sits
-              alongside them: young players who are still chasing the dream but ready to start an apprenticeship in
-              parallel.
-            </Prose>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6" data-stagger>
-            {/* Cohort 01 */}
-            <div className="cohort-card-primary relative p-10 md:p-12">
-              <span
-                className="absolute top-5 right-6 text-[10px] tracking-[0.25em] text-gold font-semibold"
-                aria-hidden="true"
-              >
-                PRIMARY
-              </span>
-              <p className="font-display text-xs text-gold tracking-[0.25em] mb-4 font-semibold">COHORT 01</p>
-              <h3 className="font-display text-[28px] font-semibold text-cream uppercase tracking-[0.02em] leading-[1.1] mb-5">
-                Athletes leaving the elite pathway
-              </h3>
-              <Prose className="text-[15px] mb-6">
-                Released academy players, retiring semi-pros, retiring professionals, and athletes returning from
-                injury or ending a competitive career. The credibility core of the programme.
-              </Prose>
-              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '20px' }}>
-                <p className="text-[11px] text-gold tracking-widest2 mb-3 font-semibold uppercase">Placement target</p>
-                <p className="text-cream-muted text-sm">
-                  Permanent roles into industry, with a written 12-month development plan agreed at offer stage.
-                </p>
-              </div>
-            </div>
-
-            {/* Cohort 02 */}
-            <div className="cohort-card-secondary p-10 md:p-12">
-              <p className="font-display text-xs text-gold tracking-[0.25em] mb-4 font-semibold">COHORT 02</p>
-              <h3 className="font-display text-[28px] font-semibold text-cream uppercase tracking-[0.02em] leading-[1.1] mb-5">
-                Apprenticeship-ready young players
-              </h3>
-              <Prose className="text-[15px] mb-6">
-                Young players still chasing a professional contract who want to start a real career in parallel. The
-                programme runs alongside their playing, not in place of it.
-              </Prose>
-              <div style={{ borderTop: '1px solid var(--border)', paddingTop: '20px' }}>
-                <p className="text-[11px] text-gold tracking-widest2 mb-3 font-semibold uppercase">Placement target</p>
-                <p className="text-cream-muted text-sm">
-                  Apprenticeships and trainee positions with employers committed to a structured development plan.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -353,34 +263,6 @@ export default function HomePage() {
             <Button variant="ghost" href="/programme">
               Read the full programme →
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Four kinds of partner ── */}
-      <section className="py-32 px-6 md:px-12" style={{ borderTop: '1px solid var(--border)' }}>
-        <div className="max-w-[1280px] mx-auto">
-          <div className="mb-20 max-w-[720px]" data-reveal>
-            <SectionLabel>Who is involved</SectionLabel>
-            <Display size="lg" as="h2">
-              Built around four<br />kinds of <GoldSpan>partner.</GoldSpan>
-            </Display>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-stagger>
-            {partners.map((partner) => (
-              <Link
-                key={partner.num}
-                href={partner.href}
-                className="partner-card block p-10 focus-visible:outline-none"
-              >
-                <p className="font-display text-sm text-gold tracking-widest2 mb-6">{partner.num}</p>
-                <h3 className="font-display text-[28px] font-semibold text-cream uppercase tracking-[0.02em] mb-4">
-                  {partner.title}
-                </h3>
-                <Prose className="text-[14px]">{partner.text}</Prose>
-              </Link>
-            ))}
           </div>
         </div>
       </section>

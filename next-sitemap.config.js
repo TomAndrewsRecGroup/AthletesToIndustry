@@ -1,6 +1,6 @@
-/** @type {import('next-sitemap').IConfig} */
+﻿/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://athletestoindustry.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://athletestoindustry.co.uk',
   generateRobotsTxt: false, // we maintain public/robots.txt manually
   generateIndexSitemap: false,
   changefreq: 'weekly',

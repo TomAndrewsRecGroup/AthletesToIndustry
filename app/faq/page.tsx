@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
 import { Prose } from '@/components/ui/Prose';
@@ -109,23 +109,23 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://athletestoindustry.com/faq#webpage',
-      url: 'https://athletestoindustry.com/faq',
+      '@id': 'https://athletestoindustry.co.uk/faq#webpage',
+      url: 'https://athletestoindustry.co.uk/faq',
       name: 'Frequently Asked Questions: Athlete Career Transition',
       description:
         'Common questions about the Athletes To Industry programme. Who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
-      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
-          { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://athletestoindustry.com/faq' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+          { '@type': 'ListItem', position: 2, name: 'FAQ', item: 'https://athletestoindustry.co.uk/faq' },
         ],
       },
     },
     {
       '@type': 'FAQPage',
-      '@id': 'https://athletestoindustry.com/faq#faqpage',
+      '@id': 'https://athletestoindustry.co.uk/faq#faqpage',
       mainEntity: faqs.flatMap((cat) =>
         cat.items.map((item) => ({
           '@type': 'Question',

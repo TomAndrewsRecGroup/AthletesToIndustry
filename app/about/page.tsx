@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
@@ -18,22 +18,22 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'AboutPage',
-      '@id': 'https://athletestoindustry.com/about#webpage',
-      url: 'https://athletestoindustry.com/about',
+      '@id': 'https://athletestoindustry.co.uk/about#webpage',
+      url: 'https://athletestoindustry.co.uk/about',
       name: 'About Athletes To Industry: Andrews Recruitment Group',
       description:
         'Athletes To Industry is a structured career transition programme for elite athletes, operated by Andrews Recruitment Group.',
-      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
-          { '@type': 'ListItem', position: 2, name: 'About', item: 'https://athletestoindustry.com/about' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+          { '@type': 'ListItem', position: 2, name: 'About', item: 'https://athletestoindustry.co.uk/about' },
         ],
       },
       mainEntity: {
         '@type': 'Organization',
-        '@id': 'https://athletestoindustry.com/#organization',
+        '@id': 'https://athletestoindustry.co.uk/#organization',
         name: 'Athletes To Industry',
         foundingDate: '2025',
         description:
@@ -136,7 +136,7 @@ export default function AboutPage() {
             </Display>
           </div>
           <div data-reveal>
-            <Prose className="text-[17px] space-y-5">
+            <Prose as="div" className="text-[17px] space-y-5">
               <p>
                 When athletes leave the elite pathway (whether at 17 from an academy or at 32 from a professional
                 career), they are typically well-supported in terms of welfare and identity. What they are rarely

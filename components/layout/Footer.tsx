@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '@/components/ui/Logo';
 import { navLinks } from '@/lib/tokens';
@@ -20,7 +21,7 @@ export function Footer() {
               </div>
             </div>
             <p className="font-body text-[13px] leading-relaxed text-cream-muted">
-              A structured career programme for athletes leaving the elite pathway. Operated by Andrews Recruitment Group, with Old Albanian RFC as pilot partner.
+              A structured career programme for athletes leaving the elite pathway. Operated by Andrews Recruitment Group.
             </p>
           </div>
 
@@ -29,8 +30,12 @@ export function Footer() {
             <div className="text-[11px] tracking-widest2 text-gold font-semibold mb-5 uppercase">Run by</div>
             <p className="text-cream text-sm mb-1">Andrews Recruitment Group</p>
             <p className="text-cream-muted text-[13px] mb-4">Operating partner</p>
-            <p className="text-cream text-sm mb-1">Old Albanian RFC</p>
-            <p className="text-cream-muted text-[13px]">Pilot club partner</p>
+            <Link
+              href="/partners"
+              className="font-body text-[13px] text-gold underline underline-offset-2 hover:text-gold-bright transition-colors duration-200"
+            >
+              View all partners →
+            </Link>
           </div>
 
           {/* Navigate */}
@@ -125,21 +130,21 @@ export function Footer() {
               </Link>
             </span>
 
-            {/* AMIVY Designs — site design credit placeholder */}
+            {/* AMIVY Designs — site design credit */}
             <div
               className="flex items-center gap-2 opacity-50 hover:opacity-80 transition-opacity duration-200"
               title="Site by AMIVY Designs, part of Andrews Recruitment Group"
             >
               <span className="text-[10px] tracking-widest2 text-cream-muted uppercase font-medium">
-                Design
+                Design by
               </span>
-              {/* Replace the span below with the AMIVY Designs logo SVG or <Image> when available */}
-              <span
-                className="font-display text-[11px] font-semibold text-cream-muted tracking-widest2 uppercase"
-                aria-label="AMIVY Designs"
-              >
-                AMIVY
-              </span>
+              <Image
+                src="https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/AMIVY%20Designs.png"
+                alt="AMIVY Designs"
+                width={72}
+                height={20}
+                className="object-contain opacity-70"
+              />
             </div>
           </div>
         </div>

@@ -13,12 +13,13 @@ export const tokens = {
   },
 } as const;
 
-export type NavRoute = 'home' | 'programme' | 'system' | 'involved' | 'contact';
+export type NavRoute = 'home' | 'programme' | 'system' | 'partners' | 'involved' | 'contact';
 
 export const navLinks: { id: NavRoute; label: string; href: string }[] = [
   { id: 'home', label: 'Home', href: '/' },
   { id: 'programme', label: 'The Programme', href: '/programme' },
   { id: 'system', label: 'The System', href: '/system' },
+  { id: 'partners', label: 'Partners', href: '/partners' },
   { id: 'involved', label: 'Get Involved', href: '/get-involved' },
   { id: 'contact', label: 'Contact', href: '/contact' },
 ];

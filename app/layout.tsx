@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { Oswald, Inter } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -21,7 +21,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://athletestoindustry.com',
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://athletestoindustry.co.uk',
   ),
   title: {
     default: 'Athletes To Industry: Athlete Career Transition Programme',
@@ -44,6 +44,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Tom Andrews', url: 'https://andrews-recruitment.com' }],
   creator: 'Andrews Recruitment Group',
   publisher: 'Andrews Recruitment Group',
+  icons: {
+    icon: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+    apple: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+    shortcut: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+  },
   openGraph: {
     title: 'Athletes To Industry: Athlete Career Transition Programme',
     description:
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
     siteName: 'Athletes To Industry',
     images: [
       {
-        url: '/og-image.png',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
         width: 1200,
         height: 630,
         alt: 'Athletes To Industry: Athlete Career Transition Programme',
@@ -65,7 +70,7 @@ export const metadata: Metadata = {
     title: 'Athletes To Industry: Athlete Career Transition Programme',
     description:
       'A structured career transition programme for elite athletes leaving sport. Operated by Andrews Recruitment Group.',
-    images: ['/og-image.png'],
+    images: ['https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png'],
   },
   robots: {
     index: true,
@@ -82,12 +87,12 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://athletestoindustry.com/#organization',
+      '@id': 'https://athletestoindustry.co.uk/#organization',
       name: 'Athletes To Industry',
-      url: 'https://athletestoindustry.com',
+      url: 'https://athletestoindustry.co.uk',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://athletestoindustry.com/og-image.png',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
       },
       description:
         'A structured career transition programme for elite athletes leaving sport, operated by Andrews Recruitment Group.',
@@ -113,13 +118,13 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://athletestoindustry.com/#website',
-      url: 'https://athletestoindustry.com',
+      '@id': 'https://athletestoindustry.co.uk/#website',
+      url: 'https://athletestoindustry.co.uk',
       name: 'Athletes To Industry',
-      publisher: { '@id': 'https://athletestoindustry.com/#organization' },
+      publisher: { '@id': 'https://athletestoindustry.co.uk/#organization' },
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://athletestoindustry.com/?s={search_term_string}',
+        target: 'https://athletestoindustry.co.uk/?s={search_term_string}',
         'query-input': 'required name=search_term_string',
       },
     },

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { ContactClient } from './ContactClient';
 
 export const metadata: Metadata = {
@@ -11,21 +11,21 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  '@id': 'https://athletestoindustry.com/contact#webpage',
-  url: 'https://athletestoindustry.com/contact',
+  '@id': 'https://athletestoindustry.co.uk/contact#webpage',
+  url: 'https://athletestoindustry.co.uk/contact',
   name: 'Contact Athletes To Industry',
   description:
     'Get in touch with the Athletes To Industry team. Messages route to the right person based on whether you are an athlete, employer, club, or training provider.',
-  isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+  isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
   mainEntity: {
     '@type': 'Organization',
-    '@id': 'https://athletestoindustry.com/#organization',
+    '@id': 'https://athletestoindustry.co.uk/#organization',
     name: 'Athletes To Industry',
     contactPoint: [
       {
         '@type': 'ContactPoint',
         contactType: 'Programme enquiries',
-        url: 'https://athletestoindustry.com/contact',
+        url: 'https://athletestoindustry.co.uk/contact',
         areaServed: 'GB',
         availableLanguage: 'English',
       },
@@ -34,8 +34,8 @@ const jsonLd = {
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://athletestoindustry.com/contact' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://athletestoindustry.co.uk/contact' },
     ],
   },
 };

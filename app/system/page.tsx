@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
@@ -45,23 +45,23 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://athletestoindustry.com/system#webpage',
-      url: 'https://athletestoindustry.com/system',
+      '@id': 'https://athletestoindustry.co.uk/system#webpage',
+      url: 'https://athletestoindustry.co.uk/system',
       name: 'Athlete Talent and Development Platform: The People System',
       description:
         'The People System manages athlete profiles, employer roles, training courses, and 12-month development plans in one place. Built and owned by Andrews Recruitment Group.',
-      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
-          { '@type': 'ListItem', position: 2, name: 'The People System', item: 'https://athletestoindustry.com/system' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+          { '@type': 'ListItem', position: 2, name: 'The People System', item: 'https://athletestoindustry.co.uk/system' },
         ],
       },
     },
     {
       '@type': 'SoftwareApplication',
-      '@id': 'https://athletestoindustry.com/system#software',
+      '@id': 'https://athletestoindustry.co.uk/system#software',
       name: 'The People System',
       description:
         'A full athlete talent and development platform built and owned by Andrews Recruitment Group. Manages athlete profiles, employer roles, training courses, and 12-month development plans.',
@@ -116,9 +116,17 @@ export default function SystemPage() {
             <span className="gold-line mt-10 mb-10 block" data-reveal="fade" />
             <div data-reveal>
               <Prose className="text-[19px] max-w-[680px]">
-                The People System is a full athlete talent and development platform built and owned by Andrews Recruitment
-                Group. It manages athlete profiles, employer roles, training courses, and 12-month development plans
-                in one place.{' '}
+                <Link
+                  href="https://thepeoplesystem.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors"
+                >
+                  The People System
+                </Link>
+                {' '}is a full talent and development platform built and owned by Andrews Recruitment Group. It is
+                the single portal through which athletes, employers, trainers, and partners all operate, keeping
+                everyone in the programme connected, trackable, and in one place.{' '}
                 <Link href="/programme" className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors">Athletes To Industry</Link>
                 {' '}runs on it end to end.
               </Prose>
@@ -135,15 +143,16 @@ export default function SystemPage() {
           </div>
           <div data-reveal>
             <Display size="lg" as="h2">
-              Athletes, employers,<br />roles, trainers, courses.<br /><GoldSpan>One system.</GoldSpan>
+              Athletes, employers,<br />trainers, partners.<br /><GoldSpan>One portal.</GoldSpan>
             </Display>
           </div>
           <div data-reveal>
             <Prose className="mt-10 text-[18px] max-w-[720px]">
               Other operators in the athlete-transition space run a CV pile and a calendar. Athletes To Industry
-              runs on a real platform. Athletes are profiled with goals, skills and aspirations. Employers list roles
-              and development plans. Trainers list courses. ARG sees the whole picture and matches accordingly.
-              Nothing is held in someone&rsquo;s inbox. Nothing falls through the gap.
+              runs on a real platform. Athletes build profiles and track their pathway. Employers list roles with
+              development plans attached. Trainers publish accredited courses and receive matched referrals. Partners
+              monitor cohort progress and placement outcomes. ARG sees the whole picture and manages accordingly.
+              Nothing held in an inbox. Nothing falling through the gap.
             </Prose>
           </div>
         </div>
@@ -180,8 +189,11 @@ export default function SystemPage() {
             Athletes To Industry uses the same infrastructure. The platform is built, the team is in place, and the
             model is in operation. This is not a pitch deck.
           </Prose>
-          <div className="mt-12">
-            <Button href="/contact">Request a walkthrough</Button>
+          <div className="mt-12 flex flex-wrap gap-4 justify-center">
+            <Button href="https://thepeoplesystem.co.uk" target="_blank" rel="noopener noreferrer">
+              Visit The People System ↗
+            </Button>
+            <Button variant="ghost" href="/contact">Request a walkthrough</Button>
           </div>
         </div>
       </section>

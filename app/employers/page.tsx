@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
 import { Prose } from '@/components/ui/Prose';
@@ -63,23 +63,23 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://athletestoindustry.com/employers#webpage',
-      url: 'https://athletestoindustry.com/employers',
+      '@id': 'https://athletestoindustry.co.uk/employers#webpage',
+      url: 'https://athletestoindustry.co.uk/employers',
       name: 'Hire Former Athletes: Employer Programme',
       description:
         'Partner with Athletes To Industry to hire pre-qualified, certificated former elite athletes. Every placement comes with a written 12-month development plan. Operated by Andrews Recruitment Group.',
-      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
-          { '@type': 'ListItem', position: 2, name: 'Employers', item: 'https://athletestoindustry.com/employers' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+          { '@type': 'ListItem', position: 2, name: 'Employers', item: 'https://athletestoindustry.co.uk/employers' },
         ],
       },
     },
     {
       '@type': 'Service',
-      '@id': 'https://athletestoindustry.com/employers#service',
+      '@id': 'https://athletestoindustry.co.uk/employers#service',
       name: 'Athletes To Industry: Employer Programme',
       provider: {
         '@type': 'Person',
@@ -98,7 +98,7 @@ const jsonLd = {
         'Pre-qualified former elite athletes placed into permanent roles with certificated training and a written 12-month development plan.',
       serviceType: 'Recruitment and career transition',
       areaServed: 'GB',
-      url: 'https://athletestoindustry.com/employers',
+      url: 'https://athletestoindustry.co.uk/employers',
     },
   ],
 };

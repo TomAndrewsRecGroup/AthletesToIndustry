@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageReveal } from '@/components/layout/PageReveal';
 import { Display, GoldSpan } from '@/components/ui/Display';
@@ -67,23 +67,23 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://athletestoindustry.com/programme#webpage',
-      url: 'https://athletestoindustry.com/programme',
+      '@id': 'https://athletestoindustry.co.uk/programme#webpage',
+      url: 'https://athletestoindustry.co.uk/programme',
       name: 'Athlete Career Transition Programme: How It Works',
       description:
         'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
-      isPartOf: { '@id': 'https://athletestoindustry.com/#website' },
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.com/' },
-          { '@type': 'ListItem', position: 2, name: 'Programme', item: 'https://athletestoindustry.com/programme' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+          { '@type': 'ListItem', position: 2, name: 'Programme', item: 'https://athletestoindustry.co.uk/programme' },
         ],
       },
     },
     {
       '@type': 'HowTo',
-      '@id': 'https://athletestoindustry.com/programme#howto',
+      '@id': 'https://athletestoindustry.co.uk/programme#howto',
       name: 'Athlete Career Transition Pathway',
       description: 'How the 12-month Athletes To Industry career transition programme works, from Week 1 onboarding through to Month 12 review.',
       totalTime: 'P12M',
