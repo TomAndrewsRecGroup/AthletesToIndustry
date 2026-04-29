@@ -166,14 +166,14 @@ export default function PartnersPage() {
                 style={{ background: 'var(--navy)' }}
               >
                 {/* Logo / placeholder */}
-                <div className="h-10 flex items-center mb-1">
+                <div className="h-16 flex items-center mb-1">
                   {partner.logoUrl ? (
                     <Image
                       src={partner.logoUrl}
                       alt={partner.name}
-                      width={140}
-                      height={40}
-                      className="object-contain object-left max-h-10 w-auto opacity-80"
+                      width={220}
+                      height={64}
+                      className="object-contain object-left max-h-16 max-w-[220px] w-auto"
                     />
                   ) : (
                     <div
