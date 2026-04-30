@@ -89,7 +89,7 @@ export function Header() {
             className="flex items-center gap-3.5 group focus-visible:outline-none"
             aria-label="Athletes To Industry home"
           >
-            <Logo size="sm" />
+            <Logo size="md" />
             <div className="leading-none">
               <div className="font-display text-[14px] tracking-widest2 text-cream font-semibold group-hover:text-gold transition-colors duration-200">
                 ATHLETE
@@ -177,7 +177,7 @@ export function Header() {
         <nav
           ref={mobileNavRef}
           id="mobile-nav"
-          className="absolute top-[68px] left-0 right-0 transition-transform duration-300"
+          className="absolute top-[88px] left-0 right-0 transition-transform duration-300"
           style={{
             background: 'rgba(6,10,24,0.98)',
             backdropFilter: 'blur(20px)',
