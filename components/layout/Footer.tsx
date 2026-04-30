@@ -14,7 +14,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <Logo size="sm" />
+              <Logo size="md" />
               <div>
                 <div className="font-display text-[14px] tracking-widest2 text-cream font-semibold">ATHLETE</div>
                 <div className="font-display text-[14px] tracking-widest2 text-gold font-semibold mt-0.5">TO INDUSTRY</div>
