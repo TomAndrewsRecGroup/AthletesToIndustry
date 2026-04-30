@@ -1,10 +1,10 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { ContactClient } from './ContactClient';
 
 export const metadata: Metadata = {
   title: 'Contact Athletes To Industry',
   description:
-    'Get in touch with the Athletes To Industry team. Whether you are an athlete, employer, club or training provider, messages route directly to the right person.',
+    'Get in touch with the Athletes To Industry team. Email Tom Andrews or Lucinda Reader directly.',
   alternates: { canonical: '/contact' },
 };
 
@@ -15,7 +15,7 @@ const jsonLd = {
   url: 'https://athletestoindustry.co.uk/contact',
   name: 'Contact Athletes To Industry',
   description:
-    'Get in touch with the Athletes To Industry team. Messages route to the right person based on whether you are an athlete, employer, club, or training provider.',
+    'Get in touch with the Athletes To Industry team. Email Tom Andrews or Lucinda Reader directly.',
   isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
   mainEntity: {
     '@type': 'Organization',
@@ -24,8 +24,17 @@ const jsonLd = {
     contactPoint: [
       {
         '@type': 'ContactPoint',
+        name: 'Tom Andrews',
+        email: 'tom@andrews-recruitment.com',
         contactType: 'Programme enquiries',
-        url: 'https://athletestoindustry.co.uk/contact',
+        areaServed: 'GB',
+        availableLanguage: 'English',
+      },
+      {
+        '@type': 'ContactPoint',
+        name: 'Lucinda Reader',
+        email: 'lucinda@ravellohr.co.uk',
+        contactType: 'Programme enquiries',
         areaServed: 'GB',
         availableLanguage: 'English',
       },
