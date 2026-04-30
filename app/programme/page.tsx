@@ -184,9 +184,10 @@ export default function ProgrammePage() {
                   <div key={t.label}>
                     <p className="text-[11px] text-gold tracking-widest2 mb-3 font-semibold">{t.label}</p>
                     {t.items.map((item) => (
-                      <p key={item} className="text-cream-muted text-sm py-1.5">
-                        · {item}
-                      </p>
+                      <div key={item} className="flex items-center gap-3 py-1.5">
+                        <span className="block w-2 h-2 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
+                        <p className="text-cream-muted text-sm">{item}</p>
+                      </div>
                     ))}
                   </div>
                 ))}
@@ -245,9 +246,10 @@ export default function ProgrammePage() {
                   <div key={t.label}>
                     <p className="text-[11px] text-gold tracking-widest2 mb-3 font-semibold">{t.label}</p>
                     {t.items.map((item) => (
-                      <p key={item} className="text-cream-muted text-sm py-1.5">
-                        · {item}
-                      </p>
+                      <div key={item} className="flex items-center gap-3 py-1.5">
+                        <span className="block w-2 h-2 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
+                        <p className="text-cream-muted text-sm">{item}</p>
+                      </div>
                     ))}
                   </div>
                 ))}
@@ -322,10 +324,11 @@ export default function ProgrammePage() {
                   {area.items.map((item) => (
                     <li
                       key={item}
-                      className="text-cream-muted text-sm py-2"
+                      className="flex items-center gap-3 text-cream-muted text-sm py-2"
                       style={{ borderBottom: '1px solid var(--border)' }}
                     >
-                      · {item}
+                      <span className="block w-2 h-2 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
+                      {item}
                     </li>
                   ))}
                 </ul>
