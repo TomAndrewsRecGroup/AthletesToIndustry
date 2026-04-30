@@ -261,7 +261,7 @@ export default function EmployersPage() {
               'Monthly and annual reporting',
               'Direct ARG contact at every review',
             ].map((feat) => (
-              <div key={feat} className="flex items-center gap-4">
+              <div key={feat} className="flex items-center gap-3">
                 <span className="block w-2 h-2 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
                 <p className="font-body text-[15px] text-cream-muted">{feat}</p>
               </div>

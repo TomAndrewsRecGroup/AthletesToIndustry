@@ -251,9 +251,10 @@ export default function HomePage() {
                   {milestone.when}
                 </p>
                 {milestone.items.map((item) => (
-                  <Prose key={item} className="text-[14px] mt-2.5">
-                    · {item}
-                  </Prose>
+                  <div key={item} className="flex items-center gap-3 mt-2.5">
+                    <span className="block w-2 h-2 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
+                    <p className="font-body text-[14px] text-cream-muted">{item}</p>
+                  </div>
                 ))}
               </div>
             ))}

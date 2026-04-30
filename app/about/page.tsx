@@ -247,8 +247,8 @@ export default function AboutPage() {
               '12-month development plans for all placed athletes',
               'Programme review and model refinement before wider rollout',
             ].map((item) => (
-              <div key={item} className="flex items-start gap-4">
-                <span className="block w-2 h-2 rounded-full flex-shrink-0 mt-2" style={{ background: 'var(--gold)' }} />
+              <div key={item} className="flex items-center gap-3">
+                <span className="block w-2 h-2 rounded-full flex-shrink-0" style={{ background: 'var(--gold)' }} />
                 <p className="font-body text-[15px] text-cream-muted">{item}</p>
               </div>
             ))}
