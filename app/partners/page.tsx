@@ -27,7 +27,7 @@ const partners: Partner[] = [
     name: 'Andrews Recruitment Group',
     role: 'Operating Partner',
     href: 'https://andrews-recruitment.com',
-    logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/ARG%20Transparent.png', // TODO: replace with real logo URL
+    logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/chatgpt.com_c_69980bfa-6c3c-8393-b5d8-f2e31d6344e1.png', // TODO: replace with real logo URL
     bio: 'Andrews Recruitment Group is the business behind Athletes To Industry. Founded by Tom Andrews, ARG is a UK specialist recruitment practice with direct experience placing people across mental health, building materials, industrial engineering, and M&E engineering. The programme is owned, operated, and run by the ARG team from Week 1 through to Month 12.',
   },
   {
