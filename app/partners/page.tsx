@@ -65,7 +65,7 @@ const partners: Partner[] = [
     href: 'https://www.lighthousesafety.co.uk',
     logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
     logoScale: 1.3,
-    bio: 'Health and safety is a serious career for ex-athletes, and Lighthouse Safety Training is the partner getting them there. A NEBOSH Gold Learning Partner with accreditations from CITB, IOSH and Qualsafe, Lighthouse delivers globally recognised qualifications that open doors fast. The pathway is clear: NEBOSH General, or NEBOSH Construction paired with NEBOSH Environment, and athletes step out of the programme with credentials employers actively hire on. Packages are tailored to each athlete’s career direction and delivered through The People System at zero cost to the athlete.',
+    bio: 'Health and safety + a great career for ex-athletes. Lighthouse Safety Training is the partner getting them there. A NEBOSH Gold Learning Partner with accreditations from CITB, IOSH and Qualsafe, Lighthouse delivers globally recognised qualifications that open doors fast. The pathway is clear: NEBOSH General, or NEBOSH Construction paired with NEBOSH Environment, and athletes step out of the programme with credentials employers actively hire on. Packages are tailored to each athlete’s career direction and delivered through The People System at zero cost to the athlete.',
   },
   {
     name: 'KRA Brown Group',
