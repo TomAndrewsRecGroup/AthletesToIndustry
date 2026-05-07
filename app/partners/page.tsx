@@ -65,7 +65,7 @@ const partners: Partner[] = [
     href: 'https://www.lighthousesafety.co.uk',
     logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
     logoScale: 1.3,
-    bio: 'Health and safety is one of the strongest second careers for ex-athletes, and Lighthouse Safety Training is the partner getting them there. A NEBOSH Gold Learning Partner accredited by CITB, IOSH and Qualsafe, Lighthouse builds tailored packages around globally recognised NEBOSH qualifications — NEBOSH General, or NEBOSH Construction paired with Environment — delivered through The People System at zero cost to the athlete.',
+    bio: 'Lighthouse Safety Training equips athletes with the health and safety qualifications that move careers forward. A NEBOSH Gold Learning Partner accredited by CITB, IOSH and Qualsafe, Lighthouse builds tailored packages around globally recognised NEBOSH qualifications — NEBOSH General, or NEBOSH Construction paired with Environment — delivered through The People System at zero cost to the athlete.',
   },
   {
     name: 'KRA Brown Group',
@@ -134,7 +134,7 @@ const jsonLd = {
       name: 'Lighthouse Safety Training',
       url: 'https://www.lighthousesafety.co.uk',
       description:
-        'NEBOSH Gold Learning Partner. UK-based health, safety, and environmental training provider established 2004. Delivers globally recognised NEBOSH qualifications (NEBOSH General, NEBOSH Construction, NEBOSH Environment) plus CITB, IOSH and Qualsafe accredited courses.',
+        'NEBOSH Gold Learning Partner. UK-based health, safety, and environmental training provider established 2004. Delivers globally recognised NEBOSH qualifications (NEBOSH General, NEBOSH Construction, NEBOSH Environment) plus CITB, IOSH and Qualsafe accredited courses to help learners advance their careers.',
       foundingDate: '2004',
       hasCredential: [
         { '@type': 'EducationalOccupationalCredential', name: 'NEBOSH Gold Learning Partner' },
@@ -144,7 +144,7 @@ const jsonLd = {
       ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'NEBOSH career pathway for ex-athletes',
+        name: 'NEBOSH qualifications for career advancement',
         itemListElement: [
           {
             '@type': 'Course',

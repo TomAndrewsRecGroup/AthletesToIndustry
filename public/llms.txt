@@ -28,7 +28,7 @@ ARG owns the first 90 days end-to-end. From Month 6 onwards, the development pla
 
 ## Training partners and certifications
 
-- **Lighthouse Safety Training** — NEBOSH **Gold** Learning Partner. UK health, safety and environmental training provider, established 2004. Also accredited by CITB, IOSH and Qualsafe. Health and safety is positioned as a serious career path for ex-athletes; the recommended pathway is **NEBOSH General**, or **NEBOSH Construction + NEBOSH Environment**. Packages are tailored to each athlete's career direction.
+- **Lighthouse Safety Training** — NEBOSH **Gold** Learning Partner. UK health, safety and environmental training provider, established 2004. Also accredited by CITB, IOSH and Qualsafe. Lighthouse delivers globally recognised health and safety qualifications that help athletes advance in their careers — typically **NEBOSH General**, or **NEBOSH Construction + NEBOSH Environment** — with packages tailored to each athlete.
 - Areas covered: career foundations (CV, interview, job-search, digital fluency); leadership and commercial; vocational and safety (CSCS, Working at Heights, Site Supervisor, sector-specific certifications); welfare and identity work.
 
 ## Employer partners
