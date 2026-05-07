@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   description:
     'The organisations behind Athletes To Industry: Andrews Recruitment Group, The People System, RecXchange, Old Albanian RFC, Lighthouse Safety Training, and KRA Brown Group.',
   alternates: { canonical: '/partners' },
+  openGraph: {
+    title: 'Programme Partners',
+    description:
+      'The organisations behind Athletes To Industry: Andrews Recruitment Group, The People System, RecXchange, Old Albanian RFC, Lighthouse Safety Training, and KRA Brown Group.',
+    url: '/partners',
+    type: 'website',
+  },
 };
 
 type Partner = {
@@ -88,17 +95,20 @@ const portalGroups = [
   },
 ];
 
+const PARTNERS_LAST_MODIFIED = '2026-05-07T00:00:00Z';
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'WebPage',
+      '@type': 'CollectionPage',
       '@id': 'https://athletestoindustry.co.uk/partners#webpage',
       url: 'https://athletestoindustry.co.uk/partners',
-      name: 'Programme Partners | Athletes To Industry',
+      name: 'Programme Partners',
       description:
         'The organisations behind Athletes To Industry: operating partner, technology platform, training providers, employer partners, and athlete providers.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      dateModified: PARTNERS_LAST_MODIFIED,
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -106,6 +116,41 @@ const jsonLd = {
           { '@type': 'ListItem', position: 2, name: 'Partners', item: 'https://athletestoindustry.co.uk/partners' },
         ],
       },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://oarugby.com/#organization',
+      name: 'Old Albanian RFC',
+      alternateName: 'Old Albanian Rugby Football Club',
+      url: 'https://www.oarugby.com',
+      description:
+        'Rugby union club based in St Albans, Hertfordshire. Pilot club partner for Athletes To Industry.',
+      sport: 'Rugby union',
+      location: { '@type': 'Place', name: 'St Albans, Hertfordshire, United Kingdom' },
+    },
+    {
+      '@type': ['Organization', 'EducationalOrganization'],
+      '@id': 'https://www.lighthousesafety.co.uk/#organization',
+      name: 'Lighthouse Safety Training',
+      url: 'https://www.lighthousesafety.co.uk',
+      description:
+        'UK-based health, safety, and environmental training provider, established 2004. Accredited by CITB, NEBOSH, IOSH and Qualsafe.',
+      foundingDate: '2004',
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', name: 'CITB accreditation' },
+        { '@type': 'EducationalOccupationalCredential', name: 'NEBOSH accreditation' },
+        { '@type': 'EducationalOccupationalCredential', name: 'IOSH accreditation' },
+        { '@type': 'EducationalOccupationalCredential', name: 'Qualsafe accreditation' },
+      ],
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://krabrown.co.uk/#organization',
+      name: 'KRA Brown Group',
+      url: 'https://krabrown.co.uk',
+      description:
+        'Family-run industrial electrical engineering business with over 29 years of experience in the aggregate, asphalt, and concrete sectors. 40+ engineers across 150+ UK sites.',
+      areaServed: { '@type': 'Country', name: 'United Kingdom' },
     },
   ],
 };
@@ -119,14 +164,14 @@ export default function PartnersPage() {
       />
 
       {/* ── Hero ── */}
-      <section className="min-h-[60vh] flex items-center pt-44 pb-20 px-6 md:px-12">
+      <section className="min-h-[60vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
               <SectionLabel>Programme Partners</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 The people<br />behind the <GoldSpan>programme.</GoldSpan>
               </Display>
             </div>
@@ -152,7 +197,7 @@ export default function PartnersPage() {
 
       {/* ── Partner cards ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -184,9 +229,11 @@ export default function PartnersPage() {
                     >
                       <Image
                         src={partner.logoUrl}
-                        alt={partner.name}
+                        alt={`${partner.name} logo`}
                         width={220}
                         height={64}
+                        sizes="(max-width: 768px) 220px, (max-width: 1024px) 200px, 220px"
+                        loading="lazy"
                         className="object-contain object-left max-h-16 max-w-[220px] w-auto"
                       />
                     </Link>
@@ -232,7 +279,7 @@ export default function PartnersPage() {
 
       {/* ── One portal, four groups ── */}
       <section
-        className="py-32 px-6 md:px-12"
+        className="section-pad-y px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -278,7 +325,7 @@ export default function PartnersPage() {
 
       {/* ── CTA ── */}
       <section
-        className="py-32 px-6 md:px-12 text-center"
+        className="section-pad-y px-6 md:px-12 text-center"
         style={{ borderTop: '1px solid var(--border)' }}
         data-reveal
       >
@@ -291,7 +338,10 @@ export default function PartnersPage() {
             Whether you run a sports club, a business looking to hire athletes, or a training organisation,
             get in touch to find out how you fit into the programme.
           </Prose>
-          <Button href="/get-involved">Get involved</Button>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Button href="/get-involved">Get involved</Button>
+            <Button variant="ghost" href="/programme">Read the programme</Button>
+          </div>
         </div>
       </section>
     </PageReveal>

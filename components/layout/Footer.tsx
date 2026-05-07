@@ -10,7 +10,7 @@ export function Footer() {
       style={{ borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 md:gap-12 mb-16">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-4 mb-6">
@@ -110,7 +110,7 @@ export function Footer() {
             >
               Andrews Recruitment Group Ltd
             </Link>
-            . Operated by{' '}
+            . Brought under the wing of{' '}
             <Link
               href="https://andrews-recruitment.com"
               target="_blank"
@@ -119,7 +119,7 @@ export function Footer() {
             >
               Tom Andrews
             </Link>
-            .
+            , Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens.
           </span>
 
           <div className="flex items-center gap-6">
@@ -133,16 +133,18 @@ export function Footer() {
             {/* AMIVY Designs — site design credit */}
             <div
               className="flex items-center gap-2 opacity-50 hover:opacity-80 transition-opacity duration-200"
-              title="Site by AMIVY Designs, part of Andrews Recruitment Group"
+              title="Designed and built by AMIVY Designs, part of the IvyLens group"
             >
               <span className="text-[10px] tracking-widest2 text-cream-muted uppercase font-medium">
-                Design by
+                Designed &amp; built by
               </span>
               <Image
                 src="https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/AMIVY%20Designs.png"
-                alt="AMIVY Designs"
+                alt="AMIVY Designs (IvyLens group)"
                 width={72}
                 height={20}
+                sizes="72px"
+                loading="lazy"
                 className="object-contain opacity-70"
               />
             </div>

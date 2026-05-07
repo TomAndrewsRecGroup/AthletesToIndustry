@@ -6,10 +6,17 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions: Athlete Career Transition',
+  title: 'FAQ: Athlete Career Transition',
   description:
     'Common questions about the Athletes To Industry programme. Who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
   alternates: { canonical: '/faq' },
+  openGraph: {
+    title: 'Frequently Asked Questions',
+    description:
+      'Common questions about the Athletes To Industry programme: who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
+    url: '/faq',
+    type: 'website',
+  },
 };
 
 const faqs = [
@@ -115,6 +122,7 @@ const jsonLd = {
       description:
         'Common questions about the Athletes To Industry programme. Who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      dateModified: '2026-05-07T00:00:00Z',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -149,14 +157,14 @@ export default function FaqPage() {
       />
 
       {/* ── Hero ── */}
-      <section className="min-h-[50vh] flex items-center pt-44 pb-20 px-6 md:px-12">
+      <section className="min-h-[50vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[860px]">
             <div data-reveal="fade">
               <SectionLabel>Athlete Career Transition: Common Questions</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 Questions,<br /><GoldSpan>answered.</GoldSpan>
               </Display>
             </div>
@@ -172,52 +180,71 @@ export default function FaqPage() {
       </section>
 
       {/* ── FAQ sections ── */}
-      <section className="px-6 md:px-12 pb-32">
+      <section className="px-6 md:px-12 pb-16 sm:pb-24 md:pb-32">
         <div className="max-w-[860px] mx-auto space-y-20">
           {faqs.map((cat) => (
-            <div key={cat.category} data-reveal>
-              <h2 className="font-display text-[11px] tracking-widest3 text-gold font-semibold uppercase mb-8">
+            <section key={cat.category} aria-labelledby={`faq-cat-${cat.category}`} data-reveal>
+              <h2
+                id={`faq-cat-${cat.category}`}
+                className="font-display text-[11px] tracking-widest3 text-gold font-semibold uppercase mb-8"
+                data-reveal="fade"
+              >
                 {cat.category}
               </h2>
-              <div className="space-y-0" style={{ borderTop: '1px solid var(--border)' }}>
+              <div className="space-y-0" style={{ borderTop: '1px solid var(--border)' }} role="list">
                 {cat.items.map((item) => (
-                  <details
+                  <article
                     key={item.q}
-                    className="group"
+                    role="listitem"
+                    itemScope
+                    itemProp="mainEntity"
+                    itemType="https://schema.org/Question"
                     style={{ borderBottom: '1px solid var(--border)' }}
                   >
-                    <summary
-                      className="flex items-center justify-between gap-6 py-6 cursor-pointer list-none focus-visible:outline-none"
-                      style={{ outline: 'none' }}
-                    >
-                      <h3 className="font-display text-[18px] md:text-[20px] font-semibold text-cream uppercase tracking-[0.02em] leading-snug">
-                        {item.q}
-                      </h3>
-                      <span
-                        className="flex-shrink-0 w-8 h-8 flex items-center justify-center transition-transform duration-300 group-open:rotate-45"
-                        style={{ color: 'var(--gold)' }}
-                        aria-hidden="true"
+                    <details className="group">
+                      <summary
+                        className="flex items-center justify-between gap-6 py-6 cursor-pointer list-none focus-visible:outline-none"
+                        style={{ outline: 'none' }}
                       >
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <line x1="8" y1="0" x2="8" y2="16" stroke="currentColor" strokeWidth="1.5" />
-                          <line x1="0" y1="8" x2="16" y2="8" stroke="currentColor" strokeWidth="1.5" />
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="pb-6">
-                      <Prose className="text-[16px] max-w-none">{item.a}</Prose>
-                    </div>
-                  </details>
+                        <h3
+                          itemProp="name"
+                          className="font-display text-[16px] sm:text-[18px] md:text-[20px] font-semibold text-cream uppercase tracking-[0.02em] leading-snug"
+                        >
+                          {item.q}
+                        </h3>
+                        <span
+                          className="flex-shrink-0 w-8 h-8 flex items-center justify-center transition-transform duration-300 group-open:rotate-45"
+                          style={{ color: 'var(--gold)' }}
+                          aria-hidden="true"
+                        >
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <line x1="8" y1="0" x2="8" y2="16" stroke="currentColor" strokeWidth="1.5" />
+                            <line x1="0" y1="8" x2="16" y2="8" stroke="currentColor" strokeWidth="1.5" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <div
+                        className="pb-6"
+                        itemScope
+                        itemProp="acceptedAnswer"
+                        itemType="https://schema.org/Answer"
+                      >
+                        <Prose className="text-[16px] max-w-none">
+                          <span itemProp="text">{item.a}</span>
+                        </Prose>
+                      </div>
+                    </details>
+                  </article>
                 ))}
               </div>
-            </div>
+            </section>
           ))}
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
         data-reveal
       >

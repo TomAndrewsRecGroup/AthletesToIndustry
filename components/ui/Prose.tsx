@@ -12,7 +12,7 @@ export function Prose({ children, className, style, as: Tag = 'p' }: ProseProps)
   return (
     <Tag
       className={cn(
-        'font-body text-[17px] leading-[1.75] text-cream-muted font-normal m-0',
+        'font-body text-[15px] sm:text-[16px] md:text-[17px] leading-[1.75] text-cream-muted font-normal m-0',
         className
       )}
       style={style}

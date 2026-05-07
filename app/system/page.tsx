@@ -7,10 +7,17 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Athlete Talent and Development Platform: The People System',
+  title: 'The People System: Athlete Talent Platform',
   description:
     'The People System manages athlete profiles, employer roles, training courses, and 12-month development plans in one place. Built and owned by Andrews Recruitment Group.',
   alternates: { canonical: '/system' },
+  openGraph: {
+    title: 'The People System: Athlete Talent Platform',
+    description:
+      'Athlete profiles, employer roles, training courses, and 12-month development plans in one place. Built and owned by Andrews Recruitment Group.',
+    url: '/system',
+    type: 'website',
+  },
 };
 
 const features = [
@@ -28,7 +35,7 @@ const features = [
   },
   {
     title: 'Trainer and course directory',
-    text: 'Trusted, verified training providers list courses on the system. Athletes are matched to the certificated training they actually need, delivered at zero cost to them.',
+    text: 'Trusted, verified training providers list courses on The People System. Athletes are matched to the certificated training they actually need, delivered at zero cost to them.',
   },
   {
     title: 'Pathway tracking',
@@ -51,6 +58,7 @@ const jsonLd = {
       description:
         'The People System manages athlete profiles, employer roles, training courses, and 12-month development plans in one place. Built and owned by Andrews Recruitment Group.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      dateModified: '2026-05-07T00:00:00Z',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -102,14 +110,14 @@ export default function SystemPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* ── Hero ── */}
-      <section className="min-h-[70vh] flex items-center pt-44 pb-20 px-6 md:px-12">
+      <section className="min-h-[70vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
               <SectionLabel>Athlete Talent &amp; Development Platform</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 The operating<br /><GoldSpan>spine.</GoldSpan>
               </Display>
             </div>
@@ -136,7 +144,7 @@ export default function SystemPage() {
       </section>
 
       {/* ── Why it matters ── */}
-      <section className="py-20 px-6 md:px-12">
+      <section className="section-pad-y-sm px-6 md:px-12">
         <div className="max-w-[1080px] mx-auto">
           <div data-reveal="fade">
             <SectionLabel>Why it matters</SectionLabel>
@@ -159,7 +167,7 @@ export default function SystemPage() {
       </section>
 
       {/* ── Six features ── */}
-      <section className="py-20 pb-32 px-6 md:px-12">
+      <section className="section-pad-y px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mosaic-grid" data-stagger>
             {features.map((feature) => (
@@ -176,7 +184,7 @@ export default function SystemPage() {
 
       {/* ── Built by ARG ── */}
       <section
-        className="py-32 px-6 md:px-12 text-center"
+        className="section-pad-y px-6 md:px-12 text-center"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[780px] mx-auto" data-reveal>

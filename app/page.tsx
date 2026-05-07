@@ -7,10 +7,14 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Athlete Career Transition Programme | Athletes To Industry',
+  title: { absolute: 'Athletes To Industry: Athlete Career Transition Programme' },
   description:
     'Athletes To Industry is a structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
   alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Athletes To Industry: Athlete Career Transition Programme',
+    url: '/',
+  },
 };
 
 const differentiators = [
@@ -76,6 +80,7 @@ const jsonLd = {
         'A structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       about: { '@id': 'https://athletestoindustry.co.uk/#organization' },
+      dateModified: '2026-05-07T00:00:00Z',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -123,22 +128,22 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* ── Hero ── */}
-      <section className="min-h-screen flex items-center pt-40 pb-20 px-6 md:px-12 relative">
+      <section className="min-h-screen flex items-center hero-pad px-6 md:px-12 relative">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
               <SectionLabel>Athlete Career Transition Programme, Andrews Recruitment Group</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 You&rsquo;ve trained<br />
                 your whole <GoldSpan>life.</GoldSpan><br />
                 Now what?
               </Display>
             </div>
-            <span className="gold-line mt-12 mb-12 block" data-reveal="fade" />
+            <span className="gold-line mt-10 mb-10 block" data-reveal="fade" />
             <div data-reveal>
-              <Prose className="text-[20px] max-w-[680px]">
+              <Prose className="text-[19px] max-w-[680px]">
                 Athletes To Industry is a{' '}
                 <Link href="/programme" className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors">structured career programme</Link>
                 {' '}for athletes moving out of the elite pathway.
@@ -165,7 +170,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Why this exists ── */}
-      <section className="py-32 px-6 md:px-12 relative">
+      <section className="section-pad-y px-6 md:px-12 relative">
         <div className="max-w-[1080px] mx-auto">
           <div data-reveal="fade">
             <SectionLabel>Why this exists</SectionLabel>
@@ -197,7 +202,7 @@ export default function HomePage() {
 
       {/* ── What makes it different ── */}
       <section
-        className="py-32 px-6 md:px-12"
+        className="section-pad-y px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -223,7 +228,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Pathway preview ── */}
-      <section className="py-32 px-6 md:px-12">
+      <section className="section-pad-y px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto">
           <div className="mb-16 max-w-[720px]" data-reveal>
             <SectionLabel>The pathway, at a glance</SectionLabel>
@@ -238,7 +243,7 @@ export default function HomePage() {
           </div>
 
           <div
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-6"
             data-stagger
           >
             {pathway.map((milestone) => (
@@ -269,7 +274,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-40 px-6 md:px-12 text-center">
+      <section className="section-pad-y px-6 md:px-12 text-center">
         <div className="max-w-[760px] mx-auto" data-reveal>
           <Display size="lg" as="h2">
             If this lands<br />with <GoldSpan>you</GoldSpan>&hellip;

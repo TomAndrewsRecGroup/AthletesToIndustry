@@ -70,20 +70,20 @@ export function GetInvolvedClient() {
   return (
     <PageReveal>
       {/* ── Hero ── */}
-      <section className="min-h-[50vh] flex items-center pt-44 pb-16 px-6 md:px-12">
+      <section className="min-h-[50vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
               <SectionLabel>Join the Athletes To Industry Programme</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 Four ways<br />to <GoldSpan>step in.</GoldSpan>
               </Display>
             </div>
             <span className="gold-line mt-10 mb-10 block" data-reveal="fade" />
             <div data-reveal>
-              <Prose className="text-[18px] max-w-[680px]">
+              <Prose className="text-[19px] max-w-[680px]">
                 The programme works because the right people are at the table. Below is what each kind of partner
                 brings, what they get, and how to come in.
               </Prose>
@@ -112,7 +112,7 @@ export function GetInvolvedClient() {
                   id={`tab-${tab.id}`}
                   onClick={() => setActive(tab.id)}
                   className={cn(
-                    'px-6 md:px-7 py-5 font-body text-[13px] tracking-[0.15em] font-semibold uppercase transition-all duration-200 -mb-px border-b-2 focus-visible:outline-none',
+                    'px-3 sm:px-6 md:px-7 py-4 sm:py-5 font-body text-[11px] sm:text-[13px] tracking-widest2 font-semibold uppercase transition-all duration-200 -mb-px border-b-2 focus-visible:outline-none min-h-[44px]',
                     isActive
                       ? 'text-gold border-gold'
                       : 'text-cream-muted border-transparent hover:text-cream'
@@ -127,7 +127,7 @@ export function GetInvolvedClient() {
       </section>
 
       {/* ── Active panel ── */}
-      <section className="pt-16 pb-32 px-6 md:px-12">
+      <section className="pt-10 sm:pt-14 md:pt-16 pb-16 sm:pb-24 md:pb-32 px-6 md:px-12">
         <div
           className="max-w-[1080px] mx-auto"
           role="tabpanel"

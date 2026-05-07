@@ -16,7 +16,7 @@ type ButtonProps = {
 );
 
 const base =
-  'inline-block px-8 py-4 text-xs tracking-widest2 font-semibold uppercase cursor-pointer transition-all duration-300 font-body leading-none';
+  'inline-block px-6 py-3.5 sm:px-8 sm:py-4 text-[11px] sm:text-xs tracking-widest2 font-semibold uppercase cursor-pointer transition-all duration-300 font-body leading-none min-h-[44px] flex items-center justify-center w-fit';
 
 const variants: Record<ButtonVariant, string> = {
   primary:

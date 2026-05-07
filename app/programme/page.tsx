@@ -7,10 +7,17 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Athlete Career Transition Programme: How It Works',
+  title: 'Programme: How It Works',
   description:
     'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
   alternates: { canonical: '/programme' },
+  openGraph: {
+    title: 'Athlete Career Transition Programme: How It Works',
+    description:
+      'A 12-month structured pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
+    url: '/programme',
+    type: 'website',
+  },
 };
 
 const stage1Timeline = [
@@ -62,6 +69,8 @@ const trainingAreas = [
   },
 ];
 
+const PROGRAMME_LAST_MODIFIED = '2026-05-07T00:00:00Z';
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -73,6 +82,7 @@ const jsonLd = {
       description:
         'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      dateModified: PROGRAMME_LAST_MODIFIED,
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -101,8 +111,59 @@ const jsonLd = {
         '@type': 'Person',
         '@id': 'https://andrews-recruitment.com/#tom-andrews',
         name: 'Tom Andrews',
-        jobTitle: 'Owner',
+        jobTitle: 'Founder and Owner',
         url: 'https://andrews-recruitment.com',
+      },
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://athletestoindustry.co.uk/programme#course-foundations',
+      name: 'Career foundations',
+      description: 'CV writing, interview skills, job-search strategy, and digital and tech fluency for athletes leaving sport.',
+      provider: { '@id': 'https://andrews-recruitment.com/#organization' },
+      educationalCredentialAwarded: 'Programme completion certificate',
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'Blended',
+        courseWorkload: 'P1M',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+      },
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://athletestoindustry.co.uk/programme#course-leadership',
+      name: 'Leadership and commercial',
+      description: 'Leadership development, commercial awareness, communication and presentation, networking.',
+      provider: { '@id': 'https://andrews-recruitment.com/#organization' },
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'Blended',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+      },
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://athletestoindustry.co.uk/programme#course-vocational',
+      name: 'Vocational and safety certifications',
+      description: 'CSCS, Working at Heights, Site Supervisor, and sector-specific certifications delivered by accredited training partners (CITB, NEBOSH, IOSH, Qualsafe).',
+      provider: { '@id': 'https://www.lighthousesafety.co.uk/#organization' },
+      educationalCredentialAwarded: 'Industry-recognised certifications (CSCS, Working at Heights, Site Supervisor and similar)',
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'Onsite',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+      },
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://athletestoindustry.co.uk/programme#course-welfare',
+      name: 'Welfare and identity',
+      description: 'Transition support, identity and purpose work, mental health signposting, alumni connection.',
+      provider: { '@id': 'https://andrews-recruitment.com/#organization' },
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'Blended',
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
       },
     },
   ],
@@ -116,14 +177,14 @@ export default function ProgrammePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* ── Hero ── */}
-      <section className="min-h-[70vh] flex items-center pt-44 pb-20 px-6 md:px-12">
+      <section className="min-h-[70vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
               <SectionLabel>Athlete Career Transition Programme</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 How it<br />actually <GoldSpan>works.</GoldSpan>
               </Display>
             </div>
@@ -146,7 +207,7 @@ export default function ProgrammePage() {
       <section className="px-6 md:px-12 pb-0">
         <div className="max-w-[1280px] mx-auto">
           <div
-            className="p-10 md:p-14 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-10 md:gap-14"
+            className="p-10 md:p-14 grid grid-cols-1 sm:grid-cols-[120px_1fr] md:grid-cols-[180px_1fr] gap-8 sm:gap-10 md:gap-14"
             style={{ background: 'var(--navy)' }}
             data-reveal
           >
@@ -179,7 +240,7 @@ export default function ProgrammePage() {
                 window. Trial days follow.
               </Prose>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8" data-stagger>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8" data-stagger>
                 {stage1Timeline.map((t) => (
                   <div key={t.label}>
                     <p className="text-[11px] text-gold tracking-widest2 mb-3 font-semibold">{t.label}</p>
@@ -215,7 +276,7 @@ export default function ProgrammePage() {
 
           {/* Stage 02 */}
           <div
-            className="p-10 md:p-14 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-10 md:gap-14"
+            className="p-10 md:p-14 grid grid-cols-1 sm:grid-cols-[120px_1fr] md:grid-cols-[180px_1fr] gap-8 sm:gap-10 md:gap-14"
             style={{ background: 'var(--navy)' }}
             data-reveal
           >
@@ -260,7 +321,7 @@ export default function ProgrammePage() {
       </section>
 
       {/* ── Training and support ── */}
-      <section className="py-32 px-6 md:px-12" style={{ borderTop: '1px solid var(--border)' }}>
+      <section className="section-pad-y px-6 md:px-12" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="max-w-[1280px] mx-auto">
           <div className="mb-16 max-w-[720px]" data-reveal>
             <SectionLabel>Training and support</SectionLabel>
@@ -340,7 +401,7 @@ export default function ProgrammePage() {
 
       {/* ── CTA ── */}
       <section
-        className="py-32 px-6 md:px-12 text-center"
+        className="section-pad-y px-6 md:px-12 text-center"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[720px] mx-auto" data-reveal>

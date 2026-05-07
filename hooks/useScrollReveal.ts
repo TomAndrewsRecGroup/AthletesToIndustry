@@ -4,6 +4,13 @@ import { useEffect } from 'react';
 
 export function useScrollReveal() {
   useEffect(() => {
+    if (
+      typeof window === 'undefined' ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
+
     const elements = document.querySelectorAll<HTMLElement>('[data-reveal],[data-stagger]');
 
     const observer = new IntersectionObserver(

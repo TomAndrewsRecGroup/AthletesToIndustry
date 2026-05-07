@@ -19,11 +19,11 @@ const contacts = [
 export function ContactClient() {
   return (
     <PageReveal>
-      <section className="min-h-screen pt-44 pb-32 px-6 md:px-12">
+      <section className="min-h-screen hero-pad px-6 md:px-12">
         <div className="max-w-[1080px] mx-auto">
           <div className="mb-20 max-w-[720px]" data-reveal>
             <SectionLabel>Contact Athletes To Industry</SectionLabel>
-            <Display>
+            <Display as="h1">
               Start the<br /><GoldSpan>conversation.</GoldSpan>
             </Display>
             <Prose className="mt-8 text-[17px]">
