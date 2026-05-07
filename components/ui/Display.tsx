@@ -20,7 +20,7 @@ export function Display({ children, size = 'xl', as: Tag = 'h1', className }: Di
   return (
     <Tag
       className={cn(
-        'font-display font-semibold tracking-[0.02em] leading-[0.95] text-cream uppercase m-0',
+        'font-display font-semibold tracking-[0.02em] leading-[1.05] sm:leading-[1] md:leading-[0.95] text-cream uppercase m-0',
         sizeClasses[size],
         className
       )}

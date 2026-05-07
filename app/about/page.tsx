@@ -7,10 +7,17 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'About Athletes To Industry: Andrews Recruitment Group',
+  title: 'About: Andrews Recruitment Group',
   description:
     'Athletes To Industry is operated by Andrews Recruitment Group, a UK recruitment business with a specialism in structured talent pathways. Learn about the programme, the operator, and the pilot partner.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Athletes To Industry: Andrews Recruitment Group',
+    description:
+      'The programme, the operator, and the pilot partner. Brought under the wing of Tom Andrews to support athletes transitioning into a working life after sport.',
+    url: '/about',
+    type: 'website',
+  },
 };
 
 const jsonLd = {
@@ -24,6 +31,7 @@ const jsonLd = {
       description:
         'Athletes To Industry is a structured career transition programme for elite athletes, operated by Andrews Recruitment Group.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      dateModified: '2026-05-07T00:00:00Z',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -60,14 +68,17 @@ const jsonLd = {
       '@type': 'Person',
       '@id': 'https://andrews-recruitment.com/#tom-andrews',
       name: 'Tom Andrews',
-      jobTitle: 'Owner',
+      jobTitle: 'Founder and Owner',
+      description:
+        'Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens. Brought Athletes To Industry under his wing to support fantastic athletes transition into a workplace after their career in sport.',
       url: 'https://andrews-recruitment.com',
-      worksFor: {
-        '@type': 'Organization',
-        '@id': 'https://andrews-recruitment.com/#organization',
-        name: 'Andrews Recruitment Group',
-        url: 'https://andrews-recruitment.com',
-      },
+      worksFor: { '@id': 'https://andrews-recruitment.com/#organization' },
+      owns: [
+        { '@id': 'https://andrews-recruitment.com/#organization' },
+        { '@id': 'https://thepeoplesystem.co.uk/#organization' },
+        { '@id': 'https://recxchange.io/#organization' },
+        { '@id': 'https://ivylens.co.uk/#organization' },
+      ],
       knowsAbout: ['Athlete career transition', 'Recruitment', 'Talent management', 'Career development'],
     },
   ],
@@ -82,14 +93,14 @@ export default function AboutPage() {
       />
 
       {/* ── Hero ── */}
-      <section className="min-h-[60vh] flex items-center pt-44 pb-20 px-6 md:px-12">
+      <section className="min-h-[60vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
               <SectionLabel>About Athletes To Industry: Andrews Recruitment Group</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 Built by people<br />who run <GoldSpan>recruitment.</GoldSpan>
               </Display>
             </div>
@@ -116,7 +127,26 @@ export default function AboutPage() {
                   Tom Andrews
                 </Link>
                 , a UK recruitment business with direct experience placing people into roles and building the
-                infrastructure to support them once they are there.
+                infrastructure to support them once they are there. Tom is also Founder and Owner of{' '}
+                <Link
+                  href="https://thepeoplesystem.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors"
+                >
+                  The People System
+                </Link>
+                ,{' '}
+                <Link
+                  href="https://recxchange.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cream underline underline-offset-4 decoration-[var(--gold-border)] hover:decoration-gold transition-colors"
+                >
+                  RecXchange
+                </Link>
+                {' '}and IvyLens, and has brought Athletes To Industry under his wing to support fantastic athletes
+                transition into a workplace after their career in sport.
               </Prose>
             </div>
           </div>
@@ -125,7 +155,7 @@ export default function AboutPage() {
 
       {/* ── The problem ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
@@ -161,7 +191,7 @@ export default function AboutPage() {
 
       {/* ── The operator ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -208,7 +238,7 @@ export default function AboutPage() {
 
       {/* ── Pilot partner ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
         data-reveal
       >
@@ -258,7 +288,7 @@ export default function AboutPage() {
 
       {/* ── CTA ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
         data-reveal
       >

@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   description:
     'The organisations behind Athletes To Industry: Andrews Recruitment Group, The People System, RecXchange, Old Albanian RFC, Lighthouse Safety Training, and KRA Brown Group.',
   alternates: { canonical: '/partners' },
+  openGraph: {
+    title: 'Programme Partners',
+    description:
+      'The organisations behind Athletes To Industry: Andrews Recruitment Group, The People System, RecXchange, Old Albanian RFC, Lighthouse Safety Training, and KRA Brown Group.',
+    url: '/partners',
+    type: 'website',
+  },
 };
 
 type Partner = {
@@ -19,6 +26,7 @@ type Partner = {
   role: string;
   href: string;
   logoUrl: string; // Replace with real logo URL when available
+  logoScale?: number; // Visual scale tweak when a logo renders smaller than its peers
   bio: string;
 };
 
@@ -56,7 +64,8 @@ const partners: Partner[] = [
     role: 'Training Partner',
     href: 'https://www.lighthousesafety.co.uk',
     logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
-    bio: 'Lighthouse Safety Training is a UK-based health, safety, and environmental training provider established in 2004, accredited by CITB, NEBOSH, IOSH, and Qualsafe. As a training partner, Lighthouse delivers certificated industry courses to athletes through The People System at zero cost to the athlete, building the qualifications employers need to see before day one.',
+    logoScale: 1.3,
+    bio: 'Lighthouse Safety Training equips athletes with the health and safety qualifications that move careers forward. A NEBOSH Gold Learning Partner, Lighthouse Safety delivers expert led training solutions and awards globally recognised NEBOSH qualifications, NEBOSH General, NEBOSH Construction or NEBOSH Environment. Globally recognised certifications and tailored packages that works for you'
   },
   {
     name: 'KRA Brown Group',
@@ -86,17 +95,20 @@ const portalGroups = [
   },
 ];
 
+const PARTNERS_LAST_MODIFIED = '2026-05-07T00:00:00Z';
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'WebPage',
+      '@type': 'CollectionPage',
       '@id': 'https://athletestoindustry.co.uk/partners#webpage',
       url: 'https://athletestoindustry.co.uk/partners',
-      name: 'Programme Partners | Athletes To Industry',
+      name: 'Programme Partners',
       description:
         'The organisations behind Athletes To Industry: operating partner, technology platform, training providers, employer partners, and athlete providers.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      dateModified: PARTNERS_LAST_MODIFIED,
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -104,6 +116,65 @@ const jsonLd = {
           { '@type': 'ListItem', position: 2, name: 'Partners', item: 'https://athletestoindustry.co.uk/partners' },
         ],
       },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://oarugby.com/#organization',
+      name: 'Old Albanian RFC',
+      alternateName: 'Old Albanian Rugby Football Club',
+      url: 'https://www.oarugby.com',
+      description:
+        'Rugby union club based in St Albans, Hertfordshire. Pilot club partner for Athletes To Industry.',
+      sport: 'Rugby union',
+      location: { '@type': 'Place', name: 'St Albans, Hertfordshire, United Kingdom' },
+    },
+    {
+      '@type': ['Organization', 'EducationalOrganization'],
+      '@id': 'https://www.lighthousesafety.co.uk/#organization',
+      name: 'Lighthouse Safety Training',
+      url: 'https://www.lighthousesafety.co.uk',
+      description:
+        'NEBOSH Gold Learning Partner. UK-based health, safety, and environmental training provider established 2004. Delivers globally recognised NEBOSH qualifications (NEBOSH General, NEBOSH Construction, NEBOSH Environment) plus CITB, IOSH and Qualsafe accredited courses to help learners advance their careers.',
+      foundingDate: '2004',
+      hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', name: 'NEBOSH Gold Learning Partner' },
+        { '@type': 'EducationalOccupationalCredential', name: 'CITB accreditation' },
+        { '@type': 'EducationalOccupationalCredential', name: 'IOSH accreditation' },
+        { '@type': 'EducationalOccupationalCredential', name: 'Qualsafe accreditation' },
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'NEBOSH qualifications for career advancement',
+        itemListElement: [
+          {
+            '@type': 'Course',
+            name: 'NEBOSH General Certificate',
+            description: 'Globally respected qualification in occupational health and safety, a recognised entry point into a health and safety career.',
+            provider: { '@id': 'https://www.lighthousesafety.co.uk/#organization' },
+          },
+          {
+            '@type': 'Course',
+            name: 'NEBOSH Construction Certificate',
+            description: 'Construction-sector occupational health and safety qualification.',
+            provider: { '@id': 'https://www.lighthousesafety.co.uk/#organization' },
+          },
+          {
+            '@type': 'Course',
+            name: 'NEBOSH Environment Certificate',
+            description: 'Environmental management qualification, paired with NEBOSH Construction to broaden career options.',
+            provider: { '@id': 'https://www.lighthousesafety.co.uk/#organization' },
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://krabrown.co.uk/#organization',
+      name: 'KRA Brown Group',
+      url: 'https://krabrown.co.uk',
+      description:
+        'Family-run industrial electrical engineering business with over 29 years of experience in the aggregate, asphalt, and concrete sectors. 40+ engineers across 150+ UK sites.',
+      areaServed: { '@type': 'Country', name: 'United Kingdom' },
     },
   ],
 };
@@ -117,14 +188,14 @@ export default function PartnersPage() {
       />
 
       {/* ── Hero ── */}
-      <section className="min-h-[60vh] flex items-center pt-44 pb-20 px-6 md:px-12">
+      <section className="min-h-[60vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
               <SectionLabel>Programme Partners</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 The people<br />behind the <GoldSpan>programme.</GoldSpan>
               </Display>
             </div>
@@ -150,7 +221,7 @@ export default function PartnersPage() {
 
       {/* ── Partner cards ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -168,13 +239,28 @@ export default function PartnersPage() {
                 {/* Logo / placeholder */}
                 <div className="h-16 flex items-center mb-1">
                   {partner.logoUrl ? (
-                    <Image
-                      src={partner.logoUrl}
-                      alt={partner.name}
-                      width={220}
-                      height={64}
-                      className="object-contain object-left max-h-16 max-w-[220px] w-auto"
-                    />
+                    <Link
+                      href={partner.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${partner.name} website`}
+                      className="inline-flex items-center transition-opacity hover:opacity-80"
+                      style={
+                        partner.logoScale
+                          ? { transform: `scale(${partner.logoScale})`, transformOrigin: 'left center' }
+                          : undefined
+                      }
+                    >
+                      <Image
+                        src={partner.logoUrl}
+                        alt={`${partner.name} logo`}
+                        width={220}
+                        height={64}
+                        sizes="(max-width: 768px) 220px, (max-width: 1024px) 200px, 220px"
+                        loading="lazy"
+                        className="object-contain object-left max-h-16 max-w-[220px] w-auto"
+                      />
+                    </Link>
                   ) : (
                     <div
                       className="inline-flex items-center px-3 py-1.5"
@@ -217,7 +303,7 @@ export default function PartnersPage() {
 
       {/* ── One portal, four groups ── */}
       <section
-        className="py-32 px-6 md:px-12"
+        className="section-pad-y px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -263,7 +349,7 @@ export default function PartnersPage() {
 
       {/* ── CTA ── */}
       <section
-        className="py-32 px-6 md:px-12 text-center"
+        className="section-pad-y px-6 md:px-12 text-center"
         style={{ borderTop: '1px solid var(--border)' }}
         data-reveal
       >
@@ -276,7 +362,10 @@ export default function PartnersPage() {
             Whether you run a sports club, a business looking to hire athletes, or a training organisation,
             get in touch to find out how you fit into the programme.
           </Prose>
-          <Button href="/get-involved">Get involved</Button>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Button href="/get-involved">Get involved</Button>
+            <Button variant="ghost" href="/programme">Read the programme</Button>
+          </div>
         </div>
       </section>
     </PageReveal>

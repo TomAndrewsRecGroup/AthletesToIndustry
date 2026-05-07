@@ -134,7 +134,7 @@ export function Header() {
           {/* Mobile hamburger */}
           <button
             ref={hamburgerRef}
-            className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] focus-visible:outline-none"
+            className="md:hidden flex flex-col justify-center items-center w-11 h-11 gap-[5px] focus-visible:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}

@@ -6,10 +6,17 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
-  title: 'Hire Former Athletes: Employer Programme',
+  title: 'Hire Former Athletes',
   description:
     'Partner with Athletes To Industry to hire pre-qualified, certificated former elite athletes. Every placement comes with a written 12-month development plan. Operated by Andrews Recruitment Group.',
   alternates: { canonical: '/employers' },
+  openGraph: {
+    title: 'Hire Former Athletes: Employer Programme',
+    description:
+      'Pre-qualified, certificated former elite athletes placed into permanent roles. Every placement includes a written 12-month development plan agreed at offer stage.',
+    url: '/employers',
+    type: 'website',
+  },
 };
 
 const attributes = [
@@ -69,6 +76,7 @@ const jsonLd = {
       description:
         'Partner with Athletes To Industry to hire pre-qualified, certificated former elite athletes. Every placement comes with a written 12-month development plan. Operated by Andrews Recruitment Group.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      dateModified: '2026-05-07T00:00:00Z',
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -112,14 +120,14 @@ export default function EmployersPage() {
       />
 
       {/* ── Hero ── */}
-      <section className="min-h-[70vh] flex items-center pt-44 pb-20 px-6 md:px-12">
+      <section className="min-h-[70vh] flex items-center hero-pad px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto w-full">
           <div className="max-w-[900px]">
             <div data-reveal="fade">
-              <SectionLabel>Hire Former Elite Athletes: Employer Partner Programme</SectionLabel>
+              <SectionLabel>Hire Former Elite Athletes</SectionLabel>
             </div>
             <div data-reveal>
-              <Display>
+              <Display as="h1">
                 Athletes who<br />perform on <GoldSpan>day one.</GoldSpan>
               </Display>
             </div>
@@ -141,7 +149,7 @@ export default function EmployersPage() {
 
       {/* ── Why athletes ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
       >
         <div className="max-w-[1280px] mx-auto">
@@ -166,7 +174,7 @@ export default function EmployersPage() {
       </section>
 
       {/* ── How it works ── */}
-      <section className="py-24 px-6 md:px-12">
+      <section className="section-pad-y-sm px-6 md:px-12">
         <div className="max-w-[1280px] mx-auto">
           <div className="mb-16 max-w-[720px]" data-reveal>
             <SectionLabel>How employer partnership works</SectionLabel>
@@ -174,7 +182,7 @@ export default function EmployersPage() {
               Four steps from<br /><GoldSpan>brief to placement.</GoldSpan>
             </Display>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: 'var(--border)' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: 'var(--border)' }} data-stagger>
             {process.map((item) => (
               <div
                 key={item.step}
@@ -232,7 +240,7 @@ export default function EmployersPage() {
 
       {/* ── The System ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
         data-reveal
       >
@@ -272,7 +280,7 @@ export default function EmployersPage() {
 
       {/* ── CTA ── */}
       <section
-        className="py-24 px-6 md:px-12"
+        className="section-pad-y-sm px-6 md:px-12"
         style={{ borderTop: '1px solid var(--border)' }}
         data-reveal
       >
@@ -287,6 +295,7 @@ export default function EmployersPage() {
           </div>
           <div className="flex gap-4 flex-wrap">
             <Button href="/contact">Get in touch</Button>
+            <Button variant="ghost" href="/partners">Meet the partners</Button>
             <Button variant="ghost" href="/faq">Read the FAQs</Button>
           </div>
         </div>
