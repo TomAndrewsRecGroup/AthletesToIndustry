@@ -65,7 +65,7 @@ const partners: Partner[] = [
     href: 'https://www.lighthousesafety.co.uk',
     logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
     logoScale: 1.3,
-    bio: 'Lighthouse Safety Training equips athletes with the health and safety qualifications that move careers forward. A NEBOSH Gold Learning Partner accredited by CITB, IOSH and Qualsafe, Lighthouse builds tailored packages around globally recognised NEBOSH qualifications — NEBOSH General, or NEBOSH Construction paired with Environment — delivered through The People System at zero cost to the athlete.',
+    bio: 'Lighthouse Safety Training equips athletes with the health and safety qualifications that move careers forward. A NEBOSH Gold Learning Partner, Lighthouse Safety delivers expert led training solutions and awards globally recognised NEBOSH qualifications, NEBOSH General, NEBOSH Construction or NEBOSH Environment. Globally recognised certifications and tailored packages that works for you'
   },
   {
     name: 'KRA Brown Group',
