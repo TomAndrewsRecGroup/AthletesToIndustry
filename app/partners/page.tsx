@@ -55,7 +55,7 @@ const partners: Partner[] = [
     name: 'Lighthouse Safety Training',
     role: 'Training Partner',
     href: 'https://www.lighthousesafety.co.uk',
-    logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/LHS%20Logo%20on%20black%20-%20Yellow%20Safety%20beams%20Strap%20TM.jpg', // TODO: replace with real logo URL
+    logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
     bio: 'Lighthouse Safety Training is a UK-based health, safety, and environmental training provider established in 2004, accredited by CITB, NEBOSH, IOSH, and Qualsafe. As a training partner, Lighthouse delivers certificated industry courses to athletes through The People System at zero cost to the athlete, building the qualifications employers need to see before day one.',
   },
   {
