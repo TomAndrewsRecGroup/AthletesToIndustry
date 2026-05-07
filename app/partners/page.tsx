@@ -65,7 +65,7 @@ const partners: Partner[] = [
     href: 'https://www.lighthousesafety.co.uk',
     logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
     logoScale: 1.3,
-    bio: 'Lighthouse Safety Training is a UK-based health, safety, and environmental training provider established in 2004, accredited by CITB, NEBOSH, IOSH, and Qualsafe. As a training partner, Lighthouse delivers certificated industry courses to athletes through The People System at zero cost to the athlete, building the qualifications employers need to see before day one.',
+    bio: 'Health and safety is a serious career for ex-athletes, and Lighthouse Safety Training is the partner getting them there. A NEBOSH Gold Learning Partner with accreditations from CITB, IOSH and Qualsafe, Lighthouse delivers globally recognised qualifications that open doors fast. The pathway is clear: NEBOSH General, or NEBOSH Construction paired with NEBOSH Environment, and athletes step out of the programme with credentials employers actively hire on. Packages are tailored to each athlete’s career direction and delivered through The People System at zero cost to the athlete.',
   },
   {
     name: 'KRA Brown Group',
@@ -134,14 +134,38 @@ const jsonLd = {
       name: 'Lighthouse Safety Training',
       url: 'https://www.lighthousesafety.co.uk',
       description:
-        'UK-based health, safety, and environmental training provider, established 2004. Accredited by CITB, NEBOSH, IOSH and Qualsafe.',
+        'NEBOSH Gold Learning Partner. UK-based health, safety, and environmental training provider established 2004. Delivers globally recognised NEBOSH qualifications (NEBOSH General, NEBOSH Construction, NEBOSH Environment) plus CITB, IOSH and Qualsafe accredited courses.',
       foundingDate: '2004',
       hasCredential: [
+        { '@type': 'EducationalOccupationalCredential', name: 'NEBOSH Gold Learning Partner' },
         { '@type': 'EducationalOccupationalCredential', name: 'CITB accreditation' },
-        { '@type': 'EducationalOccupationalCredential', name: 'NEBOSH accreditation' },
         { '@type': 'EducationalOccupationalCredential', name: 'IOSH accreditation' },
         { '@type': 'EducationalOccupationalCredential', name: 'Qualsafe accreditation' },
       ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'NEBOSH career pathway for ex-athletes',
+        itemListElement: [
+          {
+            '@type': 'Course',
+            name: 'NEBOSH General Certificate',
+            description: 'Globally respected qualification in occupational health and safety, a recognised entry point into a health and safety career.',
+            provider: { '@id': 'https://www.lighthousesafety.co.uk/#organization' },
+          },
+          {
+            '@type': 'Course',
+            name: 'NEBOSH Construction Certificate',
+            description: 'Construction-sector occupational health and safety qualification.',
+            provider: { '@id': 'https://www.lighthousesafety.co.uk/#organization' },
+          },
+          {
+            '@type': 'Course',
+            name: 'NEBOSH Environment Certificate',
+            description: 'Environmental management qualification, paired with NEBOSH Construction to broaden career options.',
+            provider: { '@id': 'https://www.lighthousesafety.co.uk/#organization' },
+          },
+        ],
+      },
     },
     {
       '@type': 'Organization',
