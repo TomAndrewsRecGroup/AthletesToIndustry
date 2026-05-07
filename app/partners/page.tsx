@@ -19,6 +19,7 @@ type Partner = {
   role: string;
   href: string;
   logoUrl: string; // Replace with real logo URL when available
+  logoScale?: number; // Visual scale tweak when a logo renders smaller than its peers
   bio: string;
 };
 
@@ -56,6 +57,7 @@ const partners: Partner[] = [
     role: 'Training Partner',
     href: 'https://www.lighthousesafety.co.uk',
     logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
+    logoScale: 1.3,
     bio: 'Lighthouse Safety Training is a UK-based health, safety, and environmental training provider established in 2004, accredited by CITB, NEBOSH, IOSH, and Qualsafe. As a training partner, Lighthouse delivers certificated industry courses to athletes through The People System at zero cost to the athlete, building the qualifications employers need to see before day one.',
   },
   {
@@ -168,13 +170,26 @@ export default function PartnersPage() {
                 {/* Logo / placeholder */}
                 <div className="h-16 flex items-center mb-1">
                   {partner.logoUrl ? (
-                    <Image
-                      src={partner.logoUrl}
-                      alt={partner.name}
-                      width={220}
-                      height={64}
-                      className="object-contain object-left max-h-16 max-w-[220px] w-auto"
-                    />
+                    <Link
+                      href={partner.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${partner.name} website`}
+                      className="inline-flex items-center transition-opacity hover:opacity-80"
+                      style={
+                        partner.logoScale
+                          ? { transform: `scale(${partner.logoScale})`, transformOrigin: 'left center' }
+                          : undefined
+                      }
+                    >
+                      <Image
+                        src={partner.logoUrl}
+                        alt={partner.name}
+                        width={220}
+                        height={64}
+                        className="object-contain object-left max-h-16 max-w-[220px] w-auto"
+                      />
+                    </Link>
                   ) : (
                     <div
                       className="inline-flex items-center px-3 py-1.5"
