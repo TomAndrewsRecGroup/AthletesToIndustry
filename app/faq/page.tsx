@@ -49,10 +49,6 @@ const faqs = [
     category: 'For athletes',
     items: [
       {
-        q: 'How much does it cost for an athlete to join?',
-        a: 'Nothing. The programme is free to athletes. Certificated training, career planning, employer introductions, and programme support are all delivered at no cost to the athlete. Employer and partner fees fund the programme.',
-      },
-      {
         q: 'What kind of roles do athletes get placed into?',
         a: 'Athletes are placed into permanent roles across a wide range of industries including commercial, operations, logistics, construction, and technology. Placements are matched to each athlete\'s skills, interests, and career plan. Young players in the second cohort are placed into apprenticeships and trainee positions that run alongside their playing.',
       },

@@ -77,7 +77,7 @@ const jsonLd = {
       url: 'https://athletestoindustry.co.uk/',
       name: 'Athletes To Industry: Athlete Career Transition Programme',
       description:
-        'A structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
+        'A structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a written 12-month development plan agreed at offer stage.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       about: { '@id': 'https://athletestoindustry.co.uk/#organization' },
       inLanguage: 'en-GB',

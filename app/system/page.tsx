@@ -35,7 +35,7 @@ const features = [
   },
   {
     title: 'Trainer and course directory',
-    text: 'Trusted, verified training providers list courses on The People System. Athletes are matched to the certificated training they actually need, delivered at zero cost to them.',
+    text: 'Trusted, verified training providers list courses on The People System. Athletes are matched to the certificated training they actually need for the career path they are taking.',
   },
   {
     title: 'Pathway tracking',
