@@ -85,7 +85,7 @@ export default function PartnerToolkitPage() {
               </div>
 
               <p className="font-display text-[10px] tracking-widest3 text-cream-muted uppercase font-medium opacity-70 print:opacity-100 self-end">
-                For partner marketing teams · v1.0
+                For partner marketing teams
               </p>
             </div>
           </div>
@@ -131,14 +131,7 @@ export default function PartnerToolkitPage() {
                   >
                     Download logo (PNG)
                   </Button>
-                  <Button
-                    variant="ghost"
-                    href="https://athletestoindustry.co.uk/partner-toolkit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Asset pack
-                  </Button>
+                
                 </div>
                 <p className="mt-4 font-body text-[12px] text-cream-muted hidden print:block">
                   Logo: {A2I_LOGO_URL}
@@ -216,13 +209,13 @@ export default function PartnerToolkitPage() {
                 track outcomes. Everyone in one portal.
               </Prose>
               <Prose className="text-[16px]">
-                Athletes To Industry sits inside the wider IvyLens group, brought under the wing of
-                founder Tom Andrews. Tom owns Andrews Recruitment Group, The People System,
-                RecXchange and IvyLens. The model is built on years of recruitment delivery, not a
-                deck.
+                Athletes To Industry sits inside the wider Andrews Recruitment Group, led by the
+                founder, Tom Andrews. Tom owns Andrews Recruitment Group, and within ARG he manages The People System,
+                RecXchange and the Recruitment division. The model is built on years of recruitment delivery, with a candidate first approach
+                which Tom has always been a strong advocate of.
               </Prose>
               <Prose className="text-[16px]">
-                Free to athletes. Funded by employer and partner fees. Piloted with Old Albanian
+                Piloted with Old Albanian
                 RFC. Designed to roll out across rugby, football, cricket, athletics and beyond.
               </Prose>
               <Prose className="text-[17px] font-medium" style={{ color: 'var(--cream)' }}>
@@ -328,11 +321,10 @@ export default function PartnerToolkitPage() {
         >
           <div className="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-4">
             <p className="font-body text-[11px] text-cream-muted tracking-[0.05em]">
-              athletestoindustry.co.uk · A programme by Andrews Recruitment Group · Part of the
-              IvyLens group
+              athletestoindustry.co.uk · A programme by Andrews Recruitment Group
             </p>
             <p className="font-body text-[11px] text-cream-muted tracking-[0.05em]">
-              Designed and built by AMIVY Designs
+              Designed and built by AMIVY Designs - part of the IvyLens Group
             </p>
           </div>
         </section>
