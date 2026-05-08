@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+﻿import type { Metadata, Viewport } from 'next';
 import { Oswald, Inter } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -86,11 +86,42 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
   },
   alternates: {
     canonical: '/',
+    languages: {
+      'en-GB': '/',
+      'x-default': '/',
+    },
   },
+  manifest: '/manifest.webmanifest',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  applicationName: 'Athletes To Industry',
+  category: 'recruitment',
+  other: {
+    'msapplication-TileColor': '#060a18',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#060a18' },
+    { media: '(prefers-color-scheme: dark)', color: '#060a18' },
+  ],
+  colorScheme: 'dark',
+  width: 'device-width',
+  initialScale: 1,
 };
 
 const SITE_LAST_MODIFIED = '2026-05-07T00:00:00Z';
@@ -114,6 +145,19 @@ const jsonLd = {
         'A structured career transition programme for elite athletes leaving sport. Operated by Andrews Recruitment Group, brought under the wing of Tom Andrews to support athletes transitioning into a working life after sport.',
       foundingDate: '2025',
       areaServed: { '@type': 'Country', name: 'United Kingdom' },
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'GB',
+      },
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          email: 'tom@andrews-recruitment.com',
+          contactType: 'Programme enquiries',
+          areaServed: 'GB',
+          availableLanguage: ['en-GB'],
+        },
+      ],
       founder: { '@id': 'https://andrews-recruitment.com/#tom-andrews' },
       parentOrganization: { '@id': 'https://andrews-recruitment.com/#organization' },
       memberOf: { '@id': 'https://ivylens.co.uk/#organization' },
@@ -235,7 +279,13 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${oswald.variable} ${inter.variable}`}>
+    <html lang="en-GB" className={`${oswald.variable} ${inter.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://haaqtnq6favvrbuh.public.blob.vercel-storage.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://haaqtnq6favvrbuh.public.blob.vercel-storage.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className="text-cream font-body overflow-x-hidden">
 
         {/* solid brand background */}

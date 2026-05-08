@@ -13,16 +13,74 @@ const A2I_LOGO_URL =
 export const metadata: Metadata = {
   title: 'Partner Marketing One-Pager',
   description:
-    'A printable one-pager for partner marketing teams. Brand assets, the brief, the full story, the facts.',
+    'Athletes To Industry partner marketing one-pager. Brand mark and download link, the brief, the full story, key facts and team contacts. Print to PDF for partner marketing teams.',
   alternates: { canonical: '/partner-toolkit' },
-  robots: { index: false, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+    },
+  },
   openGraph: {
     title: 'Athletes To Industry: Partner Marketing One-Pager',
     description:
       'Brand mark, headline copy and the full story for partner marketing teams. Print to PDF.',
     url: '/partner-toolkit',
-    type: 'website',
+    type: 'article',
   },
+};
+
+const TOOLKIT_LAST_MODIFIED = '2026-05-08T00:00:00Z';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['WebPage', 'AboutPage'],
+      '@id': 'https://athletestoindustry.co.uk/partner-toolkit#webpage',
+      url: 'https://athletestoindustry.co.uk/partner-toolkit',
+      name: 'Athletes To Industry: Partner Marketing One-Pager',
+      description:
+        'Partner marketing one-pager for Athletes To Industry. Brand mark and download link, the brief, the full story, key facts and team contacts.',
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      about: { '@id': 'https://athletestoindustry.co.uk/#organization' },
+      inLanguage: 'en-GB',
+      dateModified: TOOLKIT_LAST_MODIFIED,
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: A2I_LOGO_URL,
+        width: 512,
+        height: 512,
+      },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2', '[data-stagger] p'],
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+          { '@type': 'ListItem', position: 2, name: 'Partner Toolkit', item: 'https://athletestoindustry.co.uk/partner-toolkit' },
+        ],
+      },
+      mainEntity: { '@id': 'https://athletestoindustry.co.uk/#organization' },
+    },
+    {
+      '@type': 'DigitalDocument',
+      '@id': 'https://athletestoindustry.co.uk/partner-toolkit#document',
+      name: 'Athletes To Industry brand mark',
+      description: 'Athletes To Industry primary brand mark, PNG.',
+      url: A2I_LOGO_URL,
+      encodingFormat: 'image/png',
+      author: { '@id': 'https://ivylens.co.uk/amivy-designs#organization' },
+      copyrightHolder: { '@id': 'https://andrews-recruitment.com/#organization' },
+      isAccessibleForFree: true,
+    },
+  ],
 };
 
 const facts: { label: string; value: string }[] = [
@@ -39,6 +97,10 @@ const facts: { label: string; value: string }[] = [
 export default function PartnerToolkitPage() {
   return (
     <PageReveal>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Print fallback: static gold gradient sits behind page when WebGL doesn't print. */}
       <div aria-hidden className="iris-print-fallback" />
 

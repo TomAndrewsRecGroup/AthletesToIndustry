@@ -1,0 +1,27 @@
+{
+  "name": "Athletes To Industry",
+  "short_name": "A2I",
+  "description": "A structured 12-month career transition programme for elite athletes leaving sport. Operated by Andrews Recruitment Group.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#060a18",
+  "theme_color": "#060a18",
+  "lang": "en-GB",
+  "categories": ["business", "education", "productivity"],
+  "icons": [
+    {
+      "src": "https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

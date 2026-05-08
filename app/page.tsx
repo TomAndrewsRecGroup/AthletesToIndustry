@@ -80,7 +80,18 @@ const jsonLd = {
         'A structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       about: { '@id': 'https://athletestoindustry.co.uk/#organization' },
+      inLanguage: 'en-GB',
       dateModified: '2026-05-07T00:00:00Z',
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+        width: 1200,
+        height: 630,
+      },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '[data-reveal] p'],
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -110,6 +121,13 @@ const jsonLd = {
       serviceType: 'Athlete career transition and recruitment',
       areaServed: 'GB',
       url: 'https://athletestoindustry.co.uk',
+      audience: [
+        { '@type': 'Audience', audienceType: 'Elite athletes leaving sport' },
+        { '@type': 'Audience', audienceType: 'Apprenticeship-ready young athletes' },
+        { '@type': 'Audience', audienceType: 'Employers hiring former athletes' },
+        { '@type': 'Audience', audienceType: 'Sports clubs and governing bodies' },
+        { '@type': 'Audience', audienceType: 'Training providers' },
+      ],
       offers: {
         '@type': 'Offer',
         price: '0',

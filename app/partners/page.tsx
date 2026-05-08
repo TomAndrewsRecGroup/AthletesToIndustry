@@ -27,6 +27,7 @@ type Partner = {
   href: string;
   logoUrl: string; // Replace with real logo URL when available
   logoScale?: number; // Visual scale tweak when a logo renders smaller than its peers
+  logoAlt?: string; // Override alt text for SEO when the partner has notable credentials
   bio: string;
 };
 
@@ -65,6 +66,7 @@ const partners: Partner[] = [
     href: 'https://www.lighthousesafety.co.uk',
     logoUrl: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Lighthouse%20Safety.png', // TODO: replace with real logo URL
     logoScale: 1.3,
+    logoAlt: 'Lighthouse Safety Training logo (NEBOSH Gold Learning Partner)',
     bio: 'Lighthouse Safety Training equips athletes with the health and safety qualifications that move careers forward. A NEBOSH Gold Learning Partner, Lighthouse Safety delivers expert led training solutions and awards globally recognised NEBOSH qualifications, NEBOSH General, NEBOSH Construction or NEBOSH Environment. Globally recognised certifications and tailored packages that works for you'
   },
   {
@@ -108,7 +110,14 @@ const jsonLd = {
       description:
         'The organisations behind Athletes To Industry: operating partner, technology platform, training providers, employer partners, and athlete providers.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      inLanguage: 'en-GB',
       dateModified: PARTNERS_LAST_MODIFIED,
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+        width: 1200,
+        height: 630,
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -253,7 +262,7 @@ export default function PartnersPage() {
                     >
                       <Image
                         src={partner.logoUrl}
-                        alt={`${partner.name} logo`}
+                        alt={partner.logoAlt ?? `${partner.name} logo`}
                         width={220}
                         height={64}
                         sizes="(max-width: 768px) 220px, (max-width: 1024px) 200px, 220px"

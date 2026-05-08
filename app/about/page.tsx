@@ -31,7 +31,14 @@ const jsonLd = {
       description:
         'Athletes To Industry is a structured career transition programme for elite athletes, operated by Andrews Recruitment Group.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      inLanguage: 'en-GB',
       dateModified: '2026-05-07T00:00:00Z',
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+        width: 1200,
+        height: 630,
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [

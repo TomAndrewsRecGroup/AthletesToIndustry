@@ -122,7 +122,12 @@ const jsonLd = {
       description:
         'Common questions about the Athletes To Industry programme. Who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      inLanguage: 'en-GB',
       dateModified: '2026-05-07T00:00:00Z',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2', 'article h3', 'article p'],
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
