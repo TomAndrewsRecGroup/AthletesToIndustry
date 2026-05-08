@@ -14,9 +14,10 @@
 
 /* GROUP */
 
-  Athletes To Industry is part of the IvyLens group.
+  Athletes To Industry is created and led by Tom Andrews and operated by Andrews Recruitment Group.
+  Andrews Recruitment Group and IvyLens are independent companies, both founded by Tom Andrews.
   IvyLens: https://ivylens.co.uk
-  Sister companies: Andrews Recruitment Group, The People System, RecXchange, AMIVY Designs
+  AMIVY Designs (the studio that built this site): part of the IvyLens group.
 
 /* SITE */
 

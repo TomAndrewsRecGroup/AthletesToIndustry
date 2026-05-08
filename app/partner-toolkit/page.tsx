@@ -278,10 +278,9 @@ export default function PartnerToolkitPage() {
                 track outcomes. Everyone in one portal.
               </Prose>
               <Prose className="text-[16px]">
-                Athletes To Industry sits inside the wider IvyLens group, brought under the wing of
-                founder Tom Andrews. Tom owns Andrews Recruitment Group, The People System,
-                RecXchange and IvyLens. The model is built on years of recruitment delivery, not a
-                deck.
+                Athletes To Industry was created and is led by Tom Andrews, Founder and Owner of
+                Andrews Recruitment Group, The People System, RecXchange and IvyLens. The model is
+                built on years of recruitment delivery, not a deck.
               </Prose>
               <Prose className="text-[16px]">
                 Free to athletes. Funded by employer and partner fees. Piloted with Old Albanian
@@ -390,11 +389,10 @@ export default function PartnerToolkitPage() {
         >
           <div className="max-w-[1280px] mx-auto flex flex-wrap items-center justify-between gap-4">
             <p className="font-body text-[11px] text-cream-muted tracking-[0.05em]">
-              athletestoindustry.co.uk · A programme by Andrews Recruitment Group · Part of the
-              IvyLens group
+              athletestoindustry.co.uk · Created and led by Tom Andrews · Operated by Andrews Recruitment Group
             </p>
             <p className="font-body text-[11px] text-cream-muted tracking-[0.05em]">
-              Designed and built by AMIVY Designs
+              Designed and built by AMIVY Designs (IvyLens group)
             </p>
           </div>
         </section>

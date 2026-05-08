@@ -110,7 +110,7 @@ export function Footer() {
             >
               Andrews Recruitment Group Ltd
             </Link>
-            . Brought under the wing of{' '}
+            . Created and led by{' '}
             <Link
               href="https://andrews-recruitment.com"
               target="_blank"

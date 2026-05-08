@@ -112,6 +112,34 @@ export const metadata: Metadata = {
   other: {
     'msapplication-TileColor': '#060a18',
   },
+  // ── Webmaster / domain verification ──────────────────────────────────────
+  // Tokens are read from environment variables so they aren't committed to
+  // source control. Set the corresponding NEXT_PUBLIC_* variables in your
+  // hosting provider (e.g. Vercel project → Settings → Environment Variables).
+  // Each entry is omitted from the rendered <head> when its env var is empty.
+  // See README / DEPLOY notes for where to obtain each token.
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
+    yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION || undefined,
+    other: {
+      ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+        ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+        : {}),
+      ...(process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION
+        ? { 'facebook-domain-verification': process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION }
+        : {}),
+      ...(process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION
+        ? { 'p:domain_verify': process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION }
+        : {}),
+      ...(process.env.NEXT_PUBLIC_AHREFS_VERIFICATION
+        ? { 'ahrefs-site-verification': process.env.NEXT_PUBLIC_AHREFS_VERIFICATION }
+        : {}),
+      ...(process.env.NEXT_PUBLIC_NORTON_SAFEWEB_VERIFICATION
+        ? { 'norton-safeweb-site-verification': process.env.NEXT_PUBLIC_NORTON_SAFEWEB_VERIFICATION }
+        : {}),
+    },
+  },
 };
 
 export const viewport: Viewport = {
@@ -142,7 +170,7 @@ const jsonLd = {
         height: 512,
       },
       description:
-        'A structured career transition programme for elite athletes leaving sport. Operated by Andrews Recruitment Group, brought under the wing of Tom Andrews to support athletes transitioning into a working life after sport.',
+        'A structured career transition programme for elite athletes leaving sport. Created and led by Tom Andrews. Operated by Andrews Recruitment Group.',
       foundingDate: '2025',
       areaServed: { '@type': 'Country', name: 'United Kingdom' },
       address: {
@@ -160,7 +188,6 @@ const jsonLd = {
       ],
       founder: { '@id': 'https://andrews-recruitment.com/#tom-andrews' },
       parentOrganization: { '@id': 'https://andrews-recruitment.com/#organization' },
-      memberOf: { '@id': 'https://ivylens.co.uk/#organization' },
       knowsAbout: [
         'Athlete career transition',
         'Life after sport',
@@ -184,7 +211,7 @@ const jsonLd = {
       familyName: 'Andrews',
       jobTitle: 'Founder and Owner',
       description:
-        'Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens. Bringing Athletes To Industry under his wing to support fantastic athletes transition into a workplace after their career in sport.',
+        'Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens. Created and leads Athletes To Industry to support athletes transitioning into a workplace after their career in sport.',
       url: 'https://andrews-recruitment.com',
       worksFor: { '@id': 'https://andrews-recruitment.com/#organization' },
       owns: [
@@ -209,9 +236,8 @@ const jsonLd = {
       legalName: 'Andrews Recruitment Group Ltd',
       url: 'https://andrews-recruitment.com',
       description:
-        'A UK specialist recruitment practice with experience placing people across mental health, building materials, industrial engineering, and M&E engineering. Operator of Athletes To Industry and owner of The People System talent platform.',
+        'A UK specialist recruitment practice with experience placing people across mental health, building materials, industrial engineering, and M&E engineering. Operator of Athletes To Industry and owner of The People System talent platform. An independent company, separate from IvyLens.',
       founder: { '@id': 'https://andrews-recruitment.com/#tom-andrews' },
-      memberOf: { '@id': 'https://ivylens.co.uk/#organization' },
     },
     {
       '@type': 'Organization',
@@ -239,14 +265,10 @@ const jsonLd = {
       legalName: 'IvyLens Group',
       url: 'https://ivylens.co.uk',
       description:
-        'Parent group of Andrews Recruitment Group, The People System, RecXchange, AMIVY Designs and Athletes To Industry. Founded by Tom Andrews.',
+        'IvyLens is the parent group of AMIVY Designs. Founded by Tom Andrews. IvyLens is an independent company, separate from Andrews Recruitment Group.',
       founder: { '@id': 'https://andrews-recruitment.com/#tom-andrews' },
       subOrganization: [
-        { '@id': 'https://andrews-recruitment.com/#organization' },
-        { '@id': 'https://thepeoplesystem.co.uk/#organization' },
-        { '@id': 'https://recxchange.io/#organization' },
         { '@id': 'https://ivylens.co.uk/amivy-designs#organization' },
-        { '@id': 'https://athletestoindustry.co.uk/#organization' },
       ],
     },
     {
