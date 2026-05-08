@@ -110,7 +110,7 @@ export function Footer() {
             >
               Andrews Recruitment Group Ltd
             </Link>
-            . Brought under the wing of{' '}
+            . Created and led by{' '}
             <Link
               href="https://andrews-recruitment.com"
               target="_blank"
@@ -139,7 +139,7 @@ export function Footer() {
                 Designed &amp; built by
               </span>
               <Image
-                src="https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/AMIVY%20Designs.png"
+                src="https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/AMIVY%20Transparent.png"
                 alt="AMIVY Designs (IvyLens group)"
                 width={72}
                 height={20}
