@@ -76,7 +76,14 @@ const jsonLd = {
       description:
         'Partner with Athletes To Industry to hire pre-qualified, certificated former elite athletes. Every placement comes with a written 12-month development plan. Operated by Andrews Recruitment Group.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      inLanguage: 'en-GB',
       dateModified: '2026-05-07T00:00:00Z',
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+        width: 1200,
+        height: 630,
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -107,6 +114,11 @@ const jsonLd = {
       serviceType: 'Recruitment and career transition',
       areaServed: 'GB',
       url: 'https://athletestoindustry.co.uk/employers',
+      audience: {
+        '@type': 'BusinessAudience',
+        audienceType: 'Employers hiring former elite athletes',
+        geographicArea: { '@type': 'Country', name: 'United Kingdom' },
+      },
     },
   ],
 };

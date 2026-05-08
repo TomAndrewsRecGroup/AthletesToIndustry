@@ -13,38 +13,144 @@ const A2I_LOGO_URL =
 export const metadata: Metadata = {
   title: 'Partner Marketing One-Pager',
   description:
-    'A printable one-pager for partner marketing teams. Brand assets, the brief, the full story, the facts.',
+    'Athletes To Industry partner marketing one-pager. Brand mark and download link, the brief, the full story, key facts and team contacts. Print to PDF for partner marketing teams.',
   alternates: { canonical: '/partner-toolkit' },
-  robots: { index: false, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+    },
+  },
   openGraph: {
     title: 'Athletes To Industry: Partner Marketing One-Pager',
     description:
       'Brand mark, headline copy and the full story for partner marketing teams. Print to PDF.',
     url: '/partner-toolkit',
-    type: 'website',
+    type: 'article',
   },
+};
+
+const TOOLKIT_LAST_MODIFIED = '2026-05-08T00:00:00Z';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['WebPage', 'AboutPage'],
+      '@id': 'https://athletestoindustry.co.uk/partner-toolkit#webpage',
+      url: 'https://athletestoindustry.co.uk/partner-toolkit',
+      name: 'Athletes To Industry: Partner Marketing One-Pager',
+      description:
+        'Partner marketing one-pager for Athletes To Industry. Brand mark and download link, the brief, the full story, key facts and team contacts.',
+      isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      about: { '@id': 'https://athletestoindustry.co.uk/#organization' },
+      inLanguage: 'en-GB',
+      dateModified: TOOLKIT_LAST_MODIFIED,
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: A2I_LOGO_URL,
+        width: 512,
+        height: 512,
+      },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2', '[data-stagger] p'],
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://athletestoindustry.co.uk/' },
+          { '@type': 'ListItem', position: 2, name: 'Partner Toolkit', item: 'https://athletestoindustry.co.uk/partner-toolkit' },
+        ],
+      },
+      mainEntity: { '@id': 'https://athletestoindustry.co.uk/#organization' },
+    },
+    {
+      '@type': 'DigitalDocument',
+      '@id': 'https://athletestoindustry.co.uk/partner-toolkit#document',
+      name: 'Athletes To Industry brand mark',
+      description: 'Athletes To Industry primary brand mark, PNG.',
+      url: A2I_LOGO_URL,
+      encodingFormat: 'image/png',
+      author: { '@id': 'https://ivylens.co.uk/amivy-designs#organization' },
+      copyrightHolder: { '@id': 'https://andrews-recruitment.com/#organization' },
+      isAccessibleForFree: true,
+    },
+  ],
 };
 
 const facts: { label: string; value: string }[] = [
   { label: 'Programme length', value: '12 months' },
-  { label: 'Cost to athletes', value: '£0' },
   { label: 'Operated by', value: 'Andrews Recruitment Group' },
   { label: 'Founder & Owner', value: 'Tom Andrews' },
   { label: 'Platform', value: 'The People System' },
   { label: 'Pilot club', value: 'Old Albanian RFC' },
   { label: 'Country', value: 'United Kingdom' },
   { label: 'Sports', value: 'All' },
+  { label: 'Development plan', value: '12-month, written' },
+];
+
+const pathway: {
+  when: string;
+  title: string;
+  owner: 'ARG' | 'Employer';
+  items: string[];
+}[] = [
+  {
+    when: 'WEEK 1',
+    title: 'Onboard',
+    owner: 'ARG',
+    items: ['Screening call with Tom or Lucy', 'Onboarded onto The People System', 'Goals, options, expectations'],
+  },
+  {
+    when: 'MONTH 1',
+    title: 'Workshops',
+    owner: 'ARG',
+    items: ['CV writing', 'Interview skills', 'Job-search & digital fluency'],
+  },
+  {
+    when: 'MONTH 2',
+    title: 'Train',
+    owner: 'ARG',
+    items: ['Industry-recognised certifications', 'Trusted, verified partners', 'Tailored to the athlete'],
+  },
+  {
+    when: 'MONTH 3',
+    title: 'Introduce',
+    owner: 'ARG',
+    items: ['Live employer introductions', 'Interview scheduling', 'Trial day coordination'],
+  },
+  {
+    when: 'MONTH 6',
+    title: 'Embed',
+    owner: 'Employer',
+    items: ['Placement embedded', 'Development plan live', 'Six-month review'],
+  },
+  {
+    when: 'MONTH 12',
+    title: 'Review',
+    owner: 'Employer',
+    items: ['Twelve-month review', 'Career progression check-in', 'Alumni network'],
+  },
 ];
 
 export default function PartnerToolkitPage() {
   return (
     <PageReveal>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Print fallback: static gold gradient sits behind page when WebGL doesn't print. */}
       <div aria-hidden className="iris-print-fallback" />
 
       <article className="one-pager">
         {/* ── Hero ── */}
-        <section className="hero-pad px-6 md:px-12">
+        <section className="hero-pad px-6 md:px-12 brand-section brand-section-hero">
           <div className="max-w-[1280px] mx-auto w-full">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
               <div className="max-w-[820px]">
@@ -61,7 +167,7 @@ export default function PartnerToolkitPage() {
                 <div data-reveal>
                   <Prose className="text-[19px] max-w-[680px]">
                     A 12-month programme that walks athletes leaving sport into a real career,
-                    with real qualifications and a real recruiter. Free to athletes. Operated by{' '}
+                    with real qualifications and a real recruiter. Operated by{' '}
                     <Link
                       href="https://andrews-recruitment.com"
                       target="_blank"
@@ -93,7 +199,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── Brand assets ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1280px] mx-auto">
@@ -127,9 +233,8 @@ export default function PartnerToolkitPage() {
                   Athletes To Industry
                 </h2>
                 <Prose className="text-[15px] mb-6 max-w-[640px]">
-                  Use the gold-on-navy mark in dark contexts. The full asset pack lives at the
-                  link below. Please keep clear space around the mark equal to the height of the
-                  letterform.
+                  Use the gold-on-navy mark in dark contexts. Keep clear space around the mark
+                  equal to the height of the letterform.
                 </Prose>
                 <div className="flex flex-wrap gap-4 print:hidden">
                   <Button
@@ -139,7 +244,6 @@ export default function PartnerToolkitPage() {
                   >
                     Download logo (PNG)
                   </Button>
-                
                 </div>
                 <p className="mt-4 font-body text-[12px] text-cream-muted hidden print:block">
                   Logo: {A2I_LOGO_URL}
@@ -151,7 +255,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── The brief ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1080px] mx-auto">
@@ -178,7 +282,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── The long story ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1080px] mx-auto">
@@ -201,10 +305,10 @@ export default function PartnerToolkitPage() {
               <Prose className="text-[16px]">
                 The first ninety days are owned end-to-end by Andrews Recruitment Group. Screening
                 calls. Onboarding onto The People System. Workshops on CV, interview, job search
-                and digital fluency. Industry-recognised certifications delivered free, by partners
-                like NEBOSH Gold Learning Partner Lighthouse Safety. Then live introductions to
-                employers who have signed up to the model, and a written 12-month development plan
-                agreed at offer stage.
+                and digital fluency. Industry-recognised certifications delivered by trusted
+                partners like NEBOSH Gold Learning Partner Lighthouse Safety. Then live
+                introductions to employers who have signed up to the model, and a written 12-month
+                development plan agreed at offer stage.
               </Prose>
               <Prose className="text-[16px]">
                 From month six the development plan is co-owned with the employer. ARG stays in
@@ -233,9 +337,69 @@ export default function PartnerToolkitPage() {
           </div>
         </section>
 
+        {/* ── The pathway ── */}
+        <section
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
+          style={{ borderTop: '1px solid var(--gold-border)' }}
+        >
+          <div className="max-w-[1280px] mx-auto">
+            <div data-reveal="fade">
+              <SectionLabel>The pathway</SectionLabel>
+            </div>
+            <div data-reveal>
+              <Display size="md" as="h2">
+                Twelve months,<br />
+                <GoldSpan>one route.</GoldSpan>
+              </Display>
+            </div>
+            <Prose className="mt-6 text-[15px] max-w-[680px]" data-reveal>
+              The first ninety days are owned by Andrews Recruitment Group. From Month 6 the development
+              plan is co-owned with the employer.
+            </Prose>
+
+            <ol className="pathway-timeline mt-12" data-stagger>
+              {pathway.map((step, i) => (
+                <li key={step.when} className="pathway-step">
+                  <div className="pathway-card">
+                    <div className="pathway-card-marker">
+                      <span className="pathway-stage">
+                        Stage {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <p className="pathway-when">{step.when}</p>
+                      <span
+                        className={`pathway-owner ${step.owner === 'ARG' ? 'is-arg' : 'is-employer'}`}
+                      >
+                        {step.owner === 'ARG' ? 'ARG-led' : 'Employer-led'}
+                      </span>
+                    </div>
+                    <div className="pathway-card-body">
+                      <h3 className="pathway-title">{step.title}</h3>
+                      <ul className="pathway-items">
+                        {step.items.map((item) => (
+                          <li key={item}>
+                            <span className="pathway-bullet" aria-hidden="true" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {i < pathway.length - 1 && (
+                    <div className="pathway-arrow" aria-hidden="true">
+                      <span className="pathway-arrow-line" />
+                      <span className="pathway-arrow-head">▼</span>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
         {/* ── Quick facts ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1280px] mx-auto">
@@ -269,7 +433,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── Contact ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1280px] mx-auto">

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About Athletes To Industry: Andrews Recruitment Group',
     description:
-      'The programme, the operator, and the pilot partner. Brought under the wing of Tom Andrews to support athletes transitioning into a working life after sport.',
+      'The programme, the operator, and the pilot partner. Created and led by Tom Andrews to support athletes transitioning into a working life after sport.',
     url: '/about',
     type: 'website',
   },
@@ -31,7 +31,14 @@ const jsonLd = {
       description:
         'Athletes To Industry is a structured career transition programme for elite athletes, operated by Andrews Recruitment Group.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      inLanguage: 'en-GB',
       dateModified: '2026-05-07T00:00:00Z',
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+        width: 1200,
+        height: 630,
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [
@@ -70,7 +77,7 @@ const jsonLd = {
       name: 'Tom Andrews',
       jobTitle: 'Founder and Owner',
       description:
-        'Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens. Brought Athletes To Industry under his wing to support fantastic athletes transition into a workplace after their career in sport.',
+        'Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens. Created and leads Athletes To Industry to support athletes transitioning into a workplace after their career in sport.',
       url: 'https://andrews-recruitment.com',
       worksFor: { '@id': 'https://andrews-recruitment.com/#organization' },
       owns: [
@@ -145,8 +152,8 @@ export default function AboutPage() {
                 >
                   RecXchange
                 </Link>
-                {' '}and IvyLens, and has brought Athletes To Industry under his wing to support fantastic athletes
-                transition into a workplace after their career in sport.
+                {' '}and IvyLens. Tom created and leads Athletes To Industry to support athletes
+                transitioning into a workplace after their career in sport.
               </Prose>
             </div>
           </div>

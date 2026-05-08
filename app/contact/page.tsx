@@ -28,6 +28,7 @@ const jsonLd = {
       description:
         'Get in touch with the Athletes To Industry team. Email Tom Andrews or Lucinda Reader directly.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      inLanguage: 'en-GB',
       dateModified: CONTACT_LAST_MODIFIED,
       mainEntity: {
         '@type': 'Organization',

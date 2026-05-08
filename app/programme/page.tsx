@@ -82,7 +82,14 @@ const jsonLd = {
       description:
         'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+      inLanguage: 'en-GB',
       dateModified: PROGRAMME_LAST_MODIFIED,
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+        width: 1200,
+        height: 630,
+      },
       breadcrumb: {
         '@type': 'BreadcrumbList',
         itemListElement: [

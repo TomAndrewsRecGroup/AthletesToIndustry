@@ -1,0 +1,29 @@
+/* TEAM */
+
+  Founder & Owner: Tom Andrews
+  Site: https://andrews-recruitment.com
+  From: United Kingdom
+
+  Programme Lead: Lucinda Reader
+  From: United Kingdom
+
+/* OPERATOR */
+
+  Andrews Recruitment Group Ltd
+  Site: https://andrews-recruitment.com
+
+/* GROUP */
+
+  Athletes To Industry is created and led by Tom Andrews and operated by Andrews Recruitment Group.
+  Andrews Recruitment Group and IvyLens are independent companies, both founded by Tom Andrews.
+  IvyLens: https://ivylens.co.uk
+  AMIVY Designs (the studio that built this site): part of the IvyLens group.
+
+/* SITE */
+
+  Designed and built by: AMIVY Designs (IvyLens group)
+  Stack: Next.js (App Router), React, TypeScript, Tailwind CSS, WebGL
+  Hosted: Vercel
+  Last update: 2026-05-08
+  Standards: HTML5, ES2022, schema.org, llms.txt
+  Language: en-GB

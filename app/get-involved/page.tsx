@@ -24,7 +24,14 @@ const jsonLd = {
   description:
     'Four ways to step into the Athletes To Industry programme: athlete, employer, club or governing body, or training provider.',
   isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
+  inLanguage: 'en-GB',
   dateModified: '2026-05-07T00:00:00Z',
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: 'https://haaqtnq6favvrbuh.public.blob.vercel-storage.com/Athletes%20To%20Industry%20Option%20A.png',
+    width: 1200,
+    height: 630,
+  },
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [

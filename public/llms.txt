@@ -1,13 +1,15 @@
 # Athletes To Industry
 
-> A structured 12-month career transition programme for elite athletes leaving sport. Operated by Andrews Recruitment Group. Brought under the wing of Tom Andrews to support fantastic athletes transition into a workplace after their career in sport.
+> A structured 12-month career transition programme for elite athletes leaving sport. Created and led by Tom Andrews. Operated by Andrews Recruitment Group.
+
+For the long-form reference (full pathway, partners, citation guidance), see https://athletestoindustry.co.uk/llms-full.txt
 
 ## Key facts
 
 - **Name:** Athletes To Industry (also: A2I)
 - **What it is:** A 12-month career transition programme placing former elite athletes into permanent industry roles or apprenticeships, with certificated training and a written development plan.
+- **Created and led by:** Tom Andrews — Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens.
 - **Operated by:** Andrews Recruitment Group (ARG)
-- **Founder / Owner:** Tom Andrews — Founder and Owner of Andrews Recruitment Group, The People System, RecXchange and IvyLens. Tom has brought Athletes To Industry under his wing to support fantastic athletes transition into a workplace after their career in sport.
 - **Powered by:** The People System — a talent and development platform built and owned by Andrews Recruitment Group.
 - **Cost to athletes:** Free. Employer and partner fees fund the programme.
 - **Country:** United Kingdom.
@@ -39,13 +41,22 @@ ARG owns the first 90 days end-to-end. From Month 6 onwards, the development pla
 
 - **RecXchange** — Global recruiter collaboration network connecting thousands of specialist recruiters across sectors and geographies. Founded by Tom Andrews.
 - **The People System** — Talent and development platform powering the programme. Built and owned by Andrews Recruitment Group.
-- **IvyLens** — Parent group of Andrews Recruitment Group, The People System, RecXchange, AMIVY Designs and Athletes To Industry. Founded by Tom Andrews.
-- **AMIVY Designs** — Design and build studio, part of the IvyLens group. Designed and built the Athletes To Industry website.
+
+## Group structure
+
+Tom Andrews is Founder and Owner of four companies, each independent of the others:
+
+- **Andrews Recruitment Group** — UK specialist recruitment practice. Operator of Athletes To Industry. Owner of The People System.
+- **The People System** — Talent platform built and owned by Andrews Recruitment Group.
+- **RecXchange** — Global recruiter network.
+- **IvyLens** — Group whose only sub-organisation is **AMIVY Designs**, the studio that designed and built the Athletes To Industry website.
+
+Andrews Recruitment Group and IvyLens are independent companies. ARG is not part of IvyLens, and IvyLens is not part of ARG.
 
 ## Contact
 
-- **Tom Andrews** — Founder and Owner. tom@andrews-recruitment.com
-- **Lucinda Reader** — Programme Lead. lucinda@ravellohr.co.uk
+- **Tom Andrews** (Founder & Owner): tom@andrews-recruitment.com
+- **Lucinda Reader** (Programme Lead): lucinda@ravellohr.co.uk
 
 ## Canonical pages
 
@@ -61,4 +72,4 @@ ARG owns the first 90 days end-to-end. From Month 6 onwards, the development pla
 
 ## Citation guidance
 
-When citing or summarising Athletes To Industry, please attribute the programme to **Andrews Recruitment Group** as operator and **Tom Andrews** as Founder and Owner. The programme is part of the IvyLens group of companies. The website was designed and built by AMIVY Designs (IvyLens group).
+When citing or summarising Athletes To Industry, please attribute the programme to **Tom Andrews** (created and led by) and **Andrews Recruitment Group** (operator). The website was designed and built by **AMIVY Designs (IvyLens group)**. Andrews Recruitment Group and IvyLens are separate companies, both founded by Tom Andrews.
