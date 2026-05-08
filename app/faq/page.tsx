@@ -8,12 +8,12 @@ import { Button } from '@/components/ui/Button';
 export const metadata: Metadata = {
   title: 'FAQ: Athlete Career Transition',
   description:
-    'Common questions about the Athletes To Industry programme. Who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
+    'Common questions about the Athletes To Industry programme. Who it is for, how it works, and how athletes, employers, clubs and trainers get involved.',
   alternates: { canonical: '/faq' },
   openGraph: {
     title: 'Frequently Asked Questions',
     description:
-      'Common questions about the Athletes To Industry programme: who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
+      'Common questions about the Athletes To Industry programme: who it is for, how it works, and how athletes, employers, clubs and trainers get involved.',
     url: '/faq',
     type: 'website',
   },
@@ -116,7 +116,7 @@ const jsonLd = {
       url: 'https://athletestoindustry.co.uk/faq',
       name: 'Frequently Asked Questions: Athlete Career Transition',
       description:
-        'Common questions about the Athletes To Industry programme. Who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
+        'Common questions about the Athletes To Industry programme. Who it is for, how it works, and how athletes, employers, clubs and trainers get involved.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       inLanguage: 'en-GB',
       dateModified: '2026-05-07T00:00:00Z',
@@ -172,8 +172,8 @@ export default function FaqPage() {
             <span className="gold-line mt-10 mb-10 block" data-reveal="fade" />
             <div data-reveal>
               <Prose className="text-[19px] max-w-[680px]">
-                Everything you need to know about the programme: who it is built for, what it costs, how the
-                pathway works, and how to get involved as an athlete, employer, club, or training provider.
+                Everything you need to know about the programme: who it is built for, how the pathway works,
+                and how to get involved as an athlete, employer, club, or training provider.
               </Prose>
             </div>
           </div>
