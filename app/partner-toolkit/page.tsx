@@ -105,6 +105,14 @@ export default function PartnerToolkitPage() {
                 className="flex items-center justify-center p-8"
                 style={{ background: 'var(--cream-surface)', border: '1px solid var(--border)' }}
               >
+                 <Button
+                    variant="ghost"
+                    href="https://athletestoindustry.co.uk/partner-toolkit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Asset pack
+                  </Button>
                 <Image
                   src={A2I_LOGO_URL}
                   alt="Athletes To Industry brand mark"
