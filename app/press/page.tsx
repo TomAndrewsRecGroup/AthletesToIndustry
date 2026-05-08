@@ -99,7 +99,7 @@ const assets: {
   {
     label: 'FAQ',
     description:
-      'Common questions about the programme: who it is for, how it works, what it costs, and how athletes, employers, clubs and trainers get involved.',
+      'Common questions about the programme: who it is for, how it works, and how athletes, employers, clubs and trainers get involved.',
     href: '/faq',
     cta: 'Read the FAQ',
   },

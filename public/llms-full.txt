@@ -6,7 +6,7 @@
 
 Athletes To Industry is a 12-month career transition programme. It is not a job board. It is not a CV submission service. It is a structured pathway that takes athletes from the elite sporting environment into a permanent industry role or apprenticeship, with industry-recognised qualifications and a written 12-month development plan agreed at offer stage.
 
-The programme was created and is led by Tom Andrews. It is operated end-to-end by Andrews Recruitment Group (ARG), a UK specialist recruitment business. It is free to athletes; employer and partner fees fund the programme.
+The programme was created and is led by Tom Andrews. It is operated end-to-end by Andrews Recruitment Group (ARG), a UK specialist recruitment business.
 
 ## Who it is for
 
@@ -25,7 +25,7 @@ Twelve months. Two stages.
 
 - Week 1: Screening call with Tom or Lucy. Onboarded onto The People System. Goals, options, expectations.
 - Month 1: CV writing workshop. Interview skills workshop. Job search and digital fluency workshops.
-- Month 2: Industry-recognised certificated training, delivered by trusted partners, at zero cost to the athlete.
+- Month 2: Industry-recognised certifications, delivered by trusted partners, tailored to the athlete.
 - Month 3: Live employer introductions. Interview scheduling. Trial day coordination.
 
 **Stage 02 — Employer-led, Month 6 to Month 12.**
@@ -57,7 +57,7 @@ Training streams covered through The People System:
 - Vocational and safety: CSCS, Working at Heights, Site Supervisor, NEBOSH and sector-specific certifications.
 - Welfare and identity: transition support, identity and purpose work, mental health signposting, alumni connection.
 
-All certificated training is delivered free to the athlete.
+All certificated training is tailored to each athlete's career direction.
 
 ## Employer partners
 
@@ -95,8 +95,6 @@ Athletes To Industry launches in pilot with **Old Albanian RFC**, a rugby union 
 ## Key facts
 
 - Programme length: 12 months
-- Cost to athletes: £0 (free)
-- Cost funding model: employer and partner fees
 - Operator: Andrews Recruitment Group Ltd
 - Created and led by: Tom Andrews
 - Platform: The People System
@@ -135,6 +133,6 @@ When citing or summarising Athletes To Industry, please:
 The programme positions itself with structured, no-fluff copy. Useful one-line summaries:
 
 - "A 12-month programme that walks athletes leaving sport into a real career."
-- "Free to athletes. Real qualifications. A written development plan."
+- "Real qualifications. A written 12-month development plan."
 - "ARG owns the first ninety days. The employer co-owns the rest of the first year."
 - "Athletes built for performance, now performing for a career."

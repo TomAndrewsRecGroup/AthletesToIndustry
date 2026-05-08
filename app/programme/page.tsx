@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/Button';
 export const metadata: Metadata = {
   title: 'Programme: How It Works',
   description:
-    'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
+    'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Industry-recognised certifications, tailored to each athlete.',
   alternates: { canonical: '/programme' },
   openGraph: {
     title: 'Athlete Career Transition Programme: How It Works',
     description:
-      'A 12-month structured pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
+      'A 12-month structured pathway. ARG-led for the first 90 days, employer-led through to Month 12. Industry-recognised certifications, tailored to each athlete.',
     url: '/programme',
     type: 'website',
   },
@@ -31,7 +31,7 @@ const stage1Timeline = [
   },
   {
     label: 'MONTH 2',
-    items: ['Certificated training', 'Trusted, verified partners', 'Zero cost to the athlete'],
+    items: ['Certificated training', 'Trusted, verified partners', 'Tailored to the athlete'],
   },
   {
     label: 'MONTH 3',
@@ -80,7 +80,7 @@ const jsonLd = {
       url: 'https://athletestoindustry.co.uk/programme',
       name: 'Athlete Career Transition Programme: How It Works',
       description:
-        'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Certificated training delivered free to every athlete.',
+        'A timed, structured career pathway for athletes leaving the elite pathway. ARG-led for the first 90 days, employer-led through to Month 12. Industry-recognised certifications, tailored to each athlete.',
       isPartOf: { '@id': 'https://athletestoindustry.co.uk/#website' },
       inLanguage: 'en-GB',
       dateModified: PROGRAMME_LAST_MODIFIED,
@@ -109,7 +109,7 @@ const jsonLd = {
       step: [
         { '@type': 'HowToStep', name: 'Week 1: Onboarding', text: 'Screening call, onboarded onto The People System, goals and options session.' },
         { '@type': 'HowToStep', name: 'Month 1: Workshops', text: 'CV writing workshop, interview skills workshop, job search and tech workshops.' },
-        { '@type': 'HowToStep', name: 'Month 2: Certificated training', text: 'Certificated training delivered by trusted, verified partners at zero cost to the athlete.' },
+        { '@type': 'HowToStep', name: 'Month 2: Certificated training', text: 'Industry-recognised certifications delivered by trusted, verified partners, tailored to the athlete.' },
         { '@type': 'HowToStep', name: 'Month 3: Introductions', text: 'Client introductions, interview scheduling, trial day coordination.' },
         { '@type': 'HowToStep', name: 'Month 6: Embed', text: 'Placement embedded, development plan live, six-month review.' },
         { '@type': 'HowToStep', name: 'Month 12: Review', text: 'Twelve-month review, progression check-in, alumni network.' },
@@ -133,7 +133,6 @@ const jsonLd = {
         '@type': 'CourseInstance',
         courseMode: 'Blended',
         courseWorkload: 'P1M',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
       },
     },
     {
@@ -145,7 +144,6 @@ const jsonLd = {
       hasCourseInstance: {
         '@type': 'CourseInstance',
         courseMode: 'Blended',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
       },
     },
     {
@@ -158,7 +156,6 @@ const jsonLd = {
       hasCourseInstance: {
         '@type': 'CourseInstance',
         courseMode: 'Onsite',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
       },
     },
     {
@@ -170,7 +167,6 @@ const jsonLd = {
       hasCourseInstance: {
         '@type': 'CourseInstance',
         courseMode: 'Blended',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
       },
     },
   ],
@@ -242,9 +238,9 @@ export default function ProgrammePage() {
               </Prose>
               <Prose className="mb-8">
                 Workshops cover CV writing, interview skills, job searching, and the digital and technology fluency
-                expected in modern workplaces. Certificated training follows, delivered by trusted, verified partners
-                at zero cost to the athlete. Client introductions and interview scheduling sit at the back end of the
-                window. Trial days follow.
+                expected in modern workplaces. Industry-recognised certifications follow, delivered by trusted,
+                verified partners and tailored to each athlete. Client introductions and interview scheduling sit
+                at the back end of the window. Trial days follow.
               </Prose>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8" data-stagger>
@@ -342,7 +338,7 @@ export default function ProgrammePage() {
             </Prose>
           </div>
 
-          {/* £0 callout */}
+          {/* Featured callout */}
           <div
             className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-10 md:gap-14 p-10 md:p-14 mb-10 items-center"
             style={{
@@ -353,14 +349,14 @@ export default function ProgrammePage() {
           >
             <div>
               <p className="font-display text-[11px] text-cream-muted tracking-widest3 mb-3 font-semibold">FEATURED</p>
-              <p className="font-display text-[64px] font-semibold text-gold leading-none">£0</p>
+              <p className="font-display text-[64px] font-semibold text-gold leading-none">12</p>
               <p className="text-[12px] tracking-widest2 text-cream-muted uppercase mt-2 font-medium">
-                Cost to the athlete
+                Month written plan
               </p>
             </div>
             <div>
               <h3 className="font-display text-[32px] font-semibold text-cream uppercase tracking-[0.02em] mb-4">
-                Certificated training,<br />delivered free.
+                Certificated training,<br />tailored to the athlete.
               </h3>
               <Prose className="text-[16px] mb-5">
                 Industry-recognised certifications delivered by trusted, verified training partners listed on The
@@ -369,7 +365,8 @@ export default function ProgrammePage() {
               </Prose>
               <Prose className="text-[15px]">
                 The certifications attach back to each athlete&rsquo;s profile, visible to employers when matching
-                to roles. No course is paid for by the athlete. The programme covers it.
+                to roles. Every placement is then carried by a written 12-month development plan agreed at offer
+                stage.
               </Prose>
             </div>
           </div>
