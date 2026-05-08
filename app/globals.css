@@ -276,3 +276,98 @@ body {
     animation: none;
   }
 }
+
+/* ── Print / PDF export ── */
+.iris-print-fallback {
+  display: none;
+}
+
+@media print {
+  /* Hide site chrome that doesn't belong on a one-pager */
+  header[class*="fixed"],
+  footer,
+  .skip-link,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Force brand colours through print pipelines */
+  html,
+  body,
+  .one-pager {
+    background: #060a18 !important;
+    color: #f3ecd8 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* WebGL canvases don't render reliably in print — show the static fallback. */
+  canvas,
+  [aria-hidden] > canvas {
+    display: none !important;
+  }
+  .iris-print-fallback {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    z-index: -40;
+    background:
+      radial-gradient(circle at 72% 48%, rgba(224, 184, 90, 0.55) 0%, rgba(201, 162, 74, 0.30) 18%, rgba(201, 162, 74, 0.08) 42%, transparent 68%),
+      radial-gradient(circle at 30% 70%, rgba(201, 162, 74, 0.10) 0%, transparent 55%),
+      #060a18;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Page geometry */
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  /* Reveal animations should be off when printing */
+  [data-reveal],
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Tighten the one-pager layout */
+  .one-pager {
+    font-size: 11pt;
+  }
+  .one-pager .hero-pad {
+    padding-top: 0 !important;
+    padding-bottom: 1rem !important;
+  }
+  .one-pager section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .one-pager h1 {
+    font-size: 32pt !important;
+    line-height: 1 !important;
+  }
+  .one-pager h2 {
+    font-size: 22pt !important;
+    line-height: 1.05 !important;
+  }
+  .one-pager h3 {
+    font-size: 14pt !important;
+  }
+  .one-pager p,
+  .one-pager li,
+  .one-pager dt,
+  .one-pager dd,
+  .one-pager a {
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+  }
+  .one-pager .gold-line {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
