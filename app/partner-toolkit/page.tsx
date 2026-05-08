@@ -94,6 +94,50 @@ const facts: { label: string; value: string }[] = [
   { label: 'Sports', value: 'All' },
 ];
 
+const pathway: {
+  when: string;
+  title: string;
+  owner: 'ARG' | 'Employer';
+  items: string[];
+}[] = [
+  {
+    when: 'WEEK 1',
+    title: 'Onboard',
+    owner: 'ARG',
+    items: ['Screening call with Tom or Lucy', 'Onboarded onto The People System', 'Goals, options, expectations'],
+  },
+  {
+    when: 'MONTH 1',
+    title: 'Workshops',
+    owner: 'ARG',
+    items: ['CV writing', 'Interview skills', 'Job-search & digital fluency'],
+  },
+  {
+    when: 'MONTH 2',
+    title: 'Train',
+    owner: 'ARG',
+    items: ['Industry-recognised certifications', 'Trusted, verified partners', 'Zero cost to the athlete'],
+  },
+  {
+    when: 'MONTH 3',
+    title: 'Introduce',
+    owner: 'ARG',
+    items: ['Live employer introductions', 'Interview scheduling', 'Trial day coordination'],
+  },
+  {
+    when: 'MONTH 6',
+    title: 'Embed',
+    owner: 'Employer',
+    items: ['Placement embedded', 'Development plan live', 'Six-month review'],
+  },
+  {
+    when: 'MONTH 12',
+    title: 'Review',
+    owner: 'Employer',
+    items: ['Twelve-month review', 'Career progression check-in', 'Alumni network'],
+  },
+];
+
 export default function PartnerToolkitPage() {
   return (
     <PageReveal>
@@ -106,7 +150,7 @@ export default function PartnerToolkitPage() {
 
       <article className="one-pager">
         {/* ── Hero ── */}
-        <section className="hero-pad px-6 md:px-12">
+        <section className="hero-pad px-6 md:px-12 brand-section brand-section-hero">
           <div className="max-w-[1280px] mx-auto w-full">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
               <div className="max-w-[820px]">
@@ -155,7 +199,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── Brand assets ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1280px] mx-auto">
@@ -212,7 +256,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── The brief ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1080px] mx-auto">
@@ -239,7 +283,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── The long story ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1080px] mx-auto">
@@ -293,9 +337,69 @@ export default function PartnerToolkitPage() {
           </div>
         </section>
 
+        {/* ── The pathway ── */}
+        <section
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
+          style={{ borderTop: '1px solid var(--gold-border)' }}
+        >
+          <div className="max-w-[1280px] mx-auto">
+            <div data-reveal="fade">
+              <SectionLabel>The pathway</SectionLabel>
+            </div>
+            <div data-reveal>
+              <Display size="md" as="h2">
+                Twelve months,<br />
+                <GoldSpan>one route.</GoldSpan>
+              </Display>
+            </div>
+            <Prose className="mt-6 text-[15px] max-w-[680px]" data-reveal>
+              The first ninety days are owned by Andrews Recruitment Group. From Month 6 the development
+              plan is co-owned with the employer.
+            </Prose>
+
+            <ol className="pathway-timeline mt-12" data-stagger>
+              {pathway.map((step, i) => (
+                <li key={step.when} className="pathway-step">
+                  <div className="pathway-card">
+                    <div className="pathway-card-marker">
+                      <span className="pathway-stage">
+                        Stage {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <p className="pathway-when">{step.when}</p>
+                      <span
+                        className={`pathway-owner ${step.owner === 'ARG' ? 'is-arg' : 'is-employer'}`}
+                      >
+                        {step.owner === 'ARG' ? 'ARG-led' : 'Employer-led'}
+                      </span>
+                    </div>
+                    <div className="pathway-card-body">
+                      <h3 className="pathway-title">{step.title}</h3>
+                      <ul className="pathway-items">
+                        {step.items.map((item) => (
+                          <li key={item}>
+                            <span className="pathway-bullet" aria-hidden="true" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {i < pathway.length - 1 && (
+                    <div className="pathway-arrow" aria-hidden="true">
+                      <span className="pathway-arrow-line" />
+                      <span className="pathway-arrow-head">▼</span>
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
         {/* ── Quick facts ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1280px] mx-auto">
@@ -329,7 +433,7 @@ export default function PartnerToolkitPage() {
 
         {/* ── Contact ── */}
         <section
-          className="section-pad-y-sm px-6 md:px-12"
+          className="section-pad-y-sm px-6 md:px-12 brand-section"
           style={{ borderTop: '1px solid var(--border)' }}
         >
           <div className="max-w-[1280px] mx-auto">

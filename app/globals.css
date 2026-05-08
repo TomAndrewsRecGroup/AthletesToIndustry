@@ -282,6 +282,188 @@ body {
   display: none;
 }
 
+/* Brand section: each one-pager section gets a subtle gold wash so the brand
+   feel runs through every printed page. Visible on screen too (very subtle). */
+.brand-section {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(201, 162, 74, 0.025) 0%, transparent 60%),
+    linear-gradient(0deg, rgba(201, 162, 74, 0.02) 0%, transparent 50%);
+}
+
+.brand-section-hero {
+  background:
+    radial-gradient(ellipse at 80% 50%, rgba(201, 162, 74, 0.10) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(201, 162, 74, 0.04) 0%, transparent 70%);
+}
+
+/* ── Pathway timeline (screen) ── */
+.pathway-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 880px;
+}
+
+.pathway-step {
+  position: relative;
+}
+
+.pathway-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: var(--navy);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+@media (min-width: 640px) {
+  .pathway-card {
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 1.75rem 2rem;
+  }
+}
+
+.pathway-card-marker {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+@media (min-width: 640px) {
+  .pathway-card-marker {
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+    padding-bottom: 0;
+    padding-right: 1.5rem;
+    justify-content: center;
+  }
+}
+
+.pathway-stage {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.pathway-when {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--cream);
+  font-weight: 600;
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .pathway-when {
+    font-size: 38px;
+  }
+}
+
+.pathway-owner {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  margin-top: 4px;
+}
+.pathway-owner.is-arg {
+  color: var(--gold);
+  background: var(--gold-surface);
+  border-color: var(--gold-border);
+}
+.pathway-owner.is-employer {
+  color: var(--cream-muted);
+  background: var(--cream-surface);
+}
+
+.pathway-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pathway-title {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0;
+}
+
+.pathway-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pathway-items li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+.pathway-bullet {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.pathway-items li > span:last-child {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--cream-muted);
+}
+
+/* Vertical arrow connector between cards */
+.pathway-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 36px;
+}
+.pathway-arrow-line {
+  display: block;
+  width: 1px;
+  height: 18px;
+  background: var(--gold);
+}
+.pathway-arrow-head {
+  display: block;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--gold);
+}
+
 @media print {
   /* Hide site chrome that doesn't belong on a one-pager */
   header[class*="fixed"],
@@ -312,11 +494,27 @@ body {
     inset: 0;
     z-index: -40;
     background:
-      radial-gradient(circle at 72% 48%, rgba(224, 184, 90, 0.55) 0%, rgba(201, 162, 74, 0.30) 18%, rgba(201, 162, 74, 0.08) 42%, transparent 68%),
-      radial-gradient(circle at 30% 70%, rgba(201, 162, 74, 0.10) 0%, transparent 55%),
+      radial-gradient(circle at 72% 48%, rgba(224, 184, 90, 0.45) 0%, rgba(201, 162, 74, 0.25) 18%, rgba(201, 162, 74, 0.06) 42%, transparent 68%),
+      radial-gradient(circle at 30% 70%, rgba(201, 162, 74, 0.08) 0%, transparent 55%),
       #060a18;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+  }
+
+  /* Brand wash on every section so pages 2+ keep brand presence */
+  .brand-section {
+    background:
+      linear-gradient(180deg, rgba(201, 162, 74, 0.07) 0%, rgba(201, 162, 74, 0.02) 100%),
+      var(--navy-deep) !important;
+    border-top: 2px solid var(--gold) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .brand-section-hero {
+    background:
+      radial-gradient(ellipse at 78% 50%, rgba(201, 162, 74, 0.30) 0%, rgba(201, 162, 74, 0.10) 35%, transparent 65%),
+      var(--navy-deep) !important;
+    border-top: none !important;
   }
 
   /* Page geometry */
@@ -369,5 +567,41 @@ body {
   .one-pager .gold-line {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
+  }
+
+  /* Pathway timeline in print: keep cards intact, force borders/colours */
+  .pathway-card {
+    background: var(--navy) !important;
+    border: 1px solid var(--gold-border) !important;
+    border-left: 4px solid var(--gold) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+  .pathway-when {
+    font-size: 26pt !important;
+  }
+  .pathway-title {
+    font-size: 13pt !important;
+  }
+  .pathway-items li > span:last-child {
+    font-size: 10pt !important;
+  }
+  .pathway-arrow {
+    height: 22px;
+  }
+  .pathway-arrow-line {
+    height: 12px;
+  }
+
+  /* Force navy/gold panels (facts, contacts, brand-mark, gold callouts) to print */
+  .one-pager [style*="--navy"],
+  .one-pager [style*="--gold-surface"],
+  .one-pager [style*="--cream-surface"],
+  .one-pager [style*="--gold-border"],
+  .one-pager [style*="--border"] {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }

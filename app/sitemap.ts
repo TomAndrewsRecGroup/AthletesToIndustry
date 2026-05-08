@@ -21,6 +21,7 @@ const routes: {
   { path: '/system', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/faq', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/partner-toolkit', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/press', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/contact', priority: 0.7, changeFrequency: 'yearly' },
 ];
 

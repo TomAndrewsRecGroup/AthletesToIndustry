@@ -112,34 +112,6 @@ export const metadata: Metadata = {
   other: {
     'msapplication-TileColor': '#060a18',
   },
-  // ── Webmaster / domain verification ──────────────────────────────────────
-  // Tokens are read from environment variables so they aren't committed to
-  // source control. Set the corresponding NEXT_PUBLIC_* variables in your
-  // hosting provider (e.g. Vercel project → Settings → Environment Variables).
-  // Each entry is omitted from the rendered <head> when its env var is empty.
-  // See README / DEPLOY notes for where to obtain each token.
-  verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
-    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || undefined,
-    yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION || undefined,
-    other: {
-      ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
-        ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
-        : {}),
-      ...(process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION
-        ? { 'facebook-domain-verification': process.env.NEXT_PUBLIC_FACEBOOK_DOMAIN_VERIFICATION }
-        : {}),
-      ...(process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION
-        ? { 'p:domain_verify': process.env.NEXT_PUBLIC_PINTEREST_VERIFICATION }
-        : {}),
-      ...(process.env.NEXT_PUBLIC_AHREFS_VERIFICATION
-        ? { 'ahrefs-site-verification': process.env.NEXT_PUBLIC_AHREFS_VERIFICATION }
-        : {}),
-      ...(process.env.NEXT_PUBLIC_NORTON_SAFEWEB_VERIFICATION
-        ? { 'norton-safeweb-site-verification': process.env.NEXT_PUBLIC_NORTON_SAFEWEB_VERIFICATION }
-        : {}),
-    },
-  },
 };
 
 export const viewport: Viewport = {
