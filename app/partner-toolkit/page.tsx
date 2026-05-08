@@ -85,13 +85,13 @@ const jsonLd = {
 
 const facts: { label: string; value: string }[] = [
   { label: 'Programme length', value: '12 months' },
-  { label: 'Cost to athletes', value: '£0' },
   { label: 'Operated by', value: 'Andrews Recruitment Group' },
   { label: 'Founder & Owner', value: 'Tom Andrews' },
   { label: 'Platform', value: 'The People System' },
   { label: 'Pilot club', value: 'Old Albanian RFC' },
   { label: 'Country', value: 'United Kingdom' },
   { label: 'Sports', value: 'All' },
+  { label: 'Development plan', value: '12-month, written' },
 ];
 
 const pathway: {
@@ -116,7 +116,7 @@ const pathway: {
     when: 'MONTH 2',
     title: 'Train',
     owner: 'ARG',
-    items: ['Industry-recognised certifications', 'Trusted, verified partners', 'Zero cost to the athlete'],
+    items: ['Industry-recognised certifications', 'Trusted, verified partners', 'Tailored to the athlete'],
   },
   {
     when: 'MONTH 3',
@@ -167,7 +167,7 @@ export default function PartnerToolkitPage() {
                 <div data-reveal>
                   <Prose className="text-[19px] max-w-[680px]">
                     A 12-month programme that walks athletes leaving sport into a real career,
-                    with real qualifications and a real recruiter. Free to athletes. Operated by{' '}
+                    with real qualifications and a real recruiter. Operated by{' '}
                     <Link
                       href="https://andrews-recruitment.com"
                       target="_blank"
@@ -225,9 +225,8 @@ export default function PartnerToolkitPage() {
                   Athletes To Industry
                 </h2>
                 <Prose className="text-[15px] mb-6 max-w-[640px]">
-                  Use the gold-on-navy mark in dark contexts. The full asset pack lives at the
-                  link below. Please keep clear space around the mark equal to the height of the
-                  letterform.
+                  Use the gold-on-navy mark in dark contexts. Keep clear space around the mark
+                  equal to the height of the letterform.
                 </Prose>
                 <div className="flex flex-wrap gap-4 print:hidden">
                   <Button
@@ -236,14 +235,6 @@ export default function PartnerToolkitPage() {
                     rel="noopener noreferrer"
                   >
                     Download logo (PNG)
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    href="https://athletestoindustry.co.uk/partner-toolkit"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Asset pack
                   </Button>
                 </div>
                 <p className="mt-4 font-body text-[12px] text-cream-muted hidden print:block">
@@ -306,10 +297,10 @@ export default function PartnerToolkitPage() {
               <Prose className="text-[16px]">
                 The first ninety days are owned end-to-end by Andrews Recruitment Group. Screening
                 calls. Onboarding onto The People System. Workshops on CV, interview, job search
-                and digital fluency. Industry-recognised certifications delivered free, by partners
-                like NEBOSH Gold Learning Partner Lighthouse Safety. Then live introductions to
-                employers who have signed up to the model, and a written 12-month development plan
-                agreed at offer stage.
+                and digital fluency. Industry-recognised certifications delivered by trusted
+                partners like NEBOSH Gold Learning Partner Lighthouse Safety. Then live
+                introductions to employers who have signed up to the model, and a written 12-month
+                development plan agreed at offer stage.
               </Prose>
               <Prose className="text-[16px]">
                 From month six the development plan is co-owned with the employer. ARG stays in
@@ -327,8 +318,8 @@ export default function PartnerToolkitPage() {
                 built on years of recruitment delivery, not a deck.
               </Prose>
               <Prose className="text-[16px]">
-                Free to athletes. Funded by employer and partner fees. Piloted with Old Albanian
-                RFC. Designed to roll out across rugby, football, cricket, athletics and beyond.
+                Piloted with Old Albanian RFC. Designed to roll out across rugby, football,
+                cricket, athletics and beyond.
               </Prose>
               <Prose className="text-[17px] font-medium" style={{ color: 'var(--cream)' }}>
                 Athletes built for performance. Now performing for a career.

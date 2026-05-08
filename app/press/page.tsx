@@ -28,13 +28,13 @@ const PRESS_LAST_MODIFIED = '2026-05-08T00:00:00Z';
 
 const facts: { label: string; value: string }[] = [
   { label: 'Programme length', value: '12 months' },
-  { label: 'Cost to athletes', value: '£0' },
   { label: 'Created and led by', value: 'Tom Andrews' },
   { label: 'Operated by', value: 'Andrews Recruitment Group' },
   { label: 'Platform', value: 'The People System' },
   { label: 'Pilot club', value: 'Old Albanian RFC' },
   { label: 'Country', value: 'United Kingdom' },
   { label: 'Sports', value: 'All' },
+  { label: 'Development plan', value: '12-month, written' },
 ];
 
 const bios: {
@@ -61,8 +61,8 @@ const bios: {
     name: 'Athletes To Industry',
     role: 'The programme',
     short:
-      'A 12-month structured career transition programme for elite athletes leaving sport. Free to athletes. Operated by Andrews Recruitment Group.',
-    long: 'Athletes To Industry is a 12-month structured career transition programme for athletes leaving the elite sporting pathway. The programme places athletes into permanent industry roles or apprenticeships, with industry-recognised certifications and a written 12-month development plan agreed at offer stage. The first ninety days are owned end-to-end by Andrews Recruitment Group; from Month 6 the development plan is co-owned with the employer. The programme is free to athletes and is funded by employer and partner fees. It is powered by The People System, a talent and development platform built and owned by Andrews Recruitment Group. The pilot launches with Old Albanian RFC.',
+      'A 12-month structured career transition programme for elite athletes leaving sport. Created and led by Tom Andrews. Operated by Andrews Recruitment Group.',
+    long: 'Athletes To Industry is a 12-month structured career transition programme for athletes leaving the elite sporting pathway. The programme places athletes into permanent industry roles or apprenticeships, with industry-recognised certifications and a written 12-month development plan agreed at offer stage. The first ninety days are owned end-to-end by Andrews Recruitment Group; from Month 6 the development plan is co-owned with the employer. The programme is powered by The People System, a talent and development platform built and owned by Andrews Recruitment Group. The pilot launches with Old Albanian RFC.',
   },
 ];
 

@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/Button';
 export const metadata: Metadata = {
   title: { absolute: 'Athletes To Industry: Athlete Career Transition Programme' },
   description:
-    'Athletes To Industry is a structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a 12-month development plan at no cost to the athlete.',
+    'Athletes To Industry is a structured career transition programme for elite athletes leaving sport. Permanent roles, certificated training, and a written 12-month development plan agreed at offer stage.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Athletes To Industry: Athlete Career Transition Programme',
@@ -51,7 +51,7 @@ const pathway = [
   },
   {
     when: 'MONTH 2',
-    items: ['Certificated training', 'Delivered by trusted partners', 'At zero cost to the athlete'],
+    items: ['Certificated training', 'Delivered by trusted partners', 'Tailored to the athlete'],
   },
   {
     when: 'MONTH 3',
@@ -128,12 +128,6 @@ const jsonLd = {
         { '@type': 'Audience', audienceType: 'Sports clubs and governing bodies' },
         { '@type': 'Audience', audienceType: 'Training providers' },
       ],
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'GBP',
-        description: 'Free to athletes. Employer and partner fees fund the programme.',
-      },
     },
   ],
 };
